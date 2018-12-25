@@ -2,7 +2,7 @@
 title: Installation Basics in Linux
 keywords: linux, installation, basics
 summary: "To explain the installation process in Linux"
-sidebar: linux_wakthroughs_sidebar
+sidebar: linux_walkthroughs_sidebar
 permalink: linux_installation_basics.html
 folder: linux_walkthroughs
 ---
