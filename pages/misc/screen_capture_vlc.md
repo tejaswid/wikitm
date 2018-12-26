@@ -34,6 +34,6 @@ Using this command we are specifying the record space
 10. You are ready to go! Move any occluding windows aside and click on stream to start recording. Use the usual control buttons to start and stop capture.
 
 ## Troubleshooting
-1. Errors related to codecs not being found: Try installing [https://www.codecguide.com/download_kl.htm](K-Lite codec pack). This usually comes with a lot of the common codecs and might solve the issue.
+1. Errors related to codecs not being found: Try installing [K-Lite codec pack](https://www.codecguide.com/download_kl.htm). This usually comes with a lot of the common codecs and might solve the issue.
 
 {% include links.html %}
