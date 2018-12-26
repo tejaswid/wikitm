@@ -3,7 +3,7 @@ title: Screen Capture Using VLC
 keywords: VLC, screen capture, video
 summary: "Explains how to do screen capture using VLC media player"
 sidebar: misc_sidebar
-permalink: misc_broadcasting_internet.html
+permalink: misc_vlc_screen_capture.html
 folder: misc
 ---
 
