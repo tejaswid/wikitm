@@ -18,7 +18,7 @@ entries:
       url: /misc_broadcasting_internet.html
       output: web
 
-    - title: Capturing Screen Using VLC
+    - title: Screen Capture Using VLC
       url: /misc_vlc_screen_capture.html
       output: web
 
