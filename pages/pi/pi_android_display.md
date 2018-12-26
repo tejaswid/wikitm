@@ -141,13 +141,13 @@ startlxde-pi
 
 Be patient and a raspberry will pop up.
 
-TIP: move your finger on the screen to move the mouse. Tap to click.
+TIP: move your finger on the screen to move the mouse. Tap to click.  
 TIP: pressing the back button on the android device will toggle the keyboard.
 
-References:
-[http://elinux.org/How_to_use_an_Android_tablet_as_a_Raspberry_Pi_console_terminal_and_internet_router](http://elinux.org/How_to_use_an_Android_tablet_as_a_Raspberry_Pi_console_terminal_and_internet_router)
-[https://www.raspberrypi.org/forums/viewtopic.php?t=18916&p=331361](https://www.raspberrypi.org/forums/viewtopic.php?t=18916&p=331361)
-[http://sonelli.freshdesk.com/support/solutions/articles/182200-how-to-tunnel-x-over-ssh-using-port-forwarding](http://sonelli.freshdesk.com/support/solutions/articles/182200-how-to-tunnel-x-over-ssh-using-port-forwarding)
-[https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=105336](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=105336)
+References:  
+[http://elinux.org/How_to_use_an_Android_tablet_as_a_Raspberry_Pi_console_terminal_and_internet_router](http://elinux.org/How_to_use_an_Android_tablet_as_a_Raspberry_Pi_console_terminal_and_internet_router)  
+[https://www.raspberrypi.org/forums/viewtopic.php?t=18916&p=331361](https://www.raspberrypi.org/forums/viewtopic.php?t=18916&p=331361)  
+[http://sonelli.freshdesk.com/support/solutions/articles/182200-how-to-tunnel-x-over-ssh-using-port-forwarding](http://sonelli.freshdesk.com/support/solutions/articles/182200-how-to-tunnel-x-over-ssh-using-port-forwarding)  
+[https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=105336](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=105336)  
 
 {% include links.html %}
