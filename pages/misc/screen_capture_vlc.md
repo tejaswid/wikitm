@@ -7,6 +7,7 @@ permalink: misc_vlc_screen_capture.html
 folder: misc
 ---
 
+## How To
 1. Make sure the Desktop is clean and only the window of interest is in front. Arrange running applications such that the region being captured is not covered by another application, either behind or in front. Don’t overlap windows.
 
 2. Launch VLC and position it such that it does not overlap with the region being recorded.
