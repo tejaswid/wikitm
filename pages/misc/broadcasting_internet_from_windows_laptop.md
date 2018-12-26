@@ -48,9 +48,14 @@ Now it should say that the network has **started**.
 netsh wlan stop hostednetwork Some_Name
 ```
 
+## Create .bat files with the above commands for ease of use
+**Starting Network**  
 In general, the network gets deleted when you restart the computer. To start it, you will have to do steps 3 and 5 each time. To make it simple, you can open up notepad, paste these two lines (step 3 and 5) and save it as a .bat file. Put the file on your desktop, right click and **run as administrator**.
 
-**Note**
-Step 5 and 6 are not necessary every time. If you are changing the source from which you are sharing, then you have to do this. You can only share, through wifi, the internet you are getting from an ethernet cable (LAN), or some other USB dongle internet. You cannot connect to a new wifi network when you are sharing since your wifi is now acting like a broadcaster. In order to connect to another wifi network you have to stop broadcasting the current network (step 9). So, save that as another .bat file.
+**Stopping Network**  
+Save step 9 in another .bat file which will help you to stop the network.
+
+**Note**  
+If you are changing the source from which you are sharing, then you have to do this. You can only share, through wifi, the internet you are getting from an ethernet cable (LAN), or some other USB dongle internet. You cannot connect to a new wifi network when you are sharing since your wifi is now acting like a broadcaster. In order to connect to another wifi network you have to stop broadcasting the current network (step 9).
 
 {% include links.html %}
