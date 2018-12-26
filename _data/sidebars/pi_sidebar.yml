@@ -1,0 +1,27 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Raspberry Pi
+  version: 1.0
+  folders:
+
+  - title: Raspberry Pi
+    output: web
+    folderitems:
+    - title: Home
+      url: /p1_landing_page.html
+      output: web
+
+    - title: Setting up an Android Display
+      url: /pi_android_display.html
+      output: web
+
+    - title: Headless Spector
+      url: /pi_headless_spector.html
+      output: web
+
+    - title: Setting up a TFT display
+      url: /pi_TFT_display.html
+      output: web
