@@ -1,12 +1,13 @@
+# This is the file for the top navigation bar
 ## Topnav single links
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
 topnav:
 - title: Topnav
   items:
     - title: About Us
-      url: https://tejaswid.github.io
+      url: 
 
-#Topnav dropdowns
+# Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
