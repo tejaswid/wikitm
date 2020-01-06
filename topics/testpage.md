@@ -1,6 +1,6 @@
 ---
 title:  "Test page"
-permalink: /topics/testpage.md
+permalink: /topics/
 ---
 
 This is a test page.
