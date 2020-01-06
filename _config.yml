@@ -2,3 +2,7 @@ theme: minima
 plugins:
   - jekyll-seo-tag
   - jekyll-coffeescript
+
+# these pages go into the top header
+header_pages:
+  - about.md
