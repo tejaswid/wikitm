@@ -42,3 +42,7 @@ author:
 version: 1.0.0
 github:
   repo: https://github.com/tejaswid/wikitm
+
+# For navigation bar at the top
+pages_list:       
+  About: '/about'
