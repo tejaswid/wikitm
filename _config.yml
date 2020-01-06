@@ -1,7 +1,7 @@
 # Setup
-title: Poole
-tagline: The Jekyll Butler
-url: https://getpoole.com
+title: WikiTM
+tagline: A wiki for tools used in and around robotics.
+url: https://tejaswid.github.io/wikitm
 paginate: 1
 baseurl: ""
 permalink: pretty
@@ -33,11 +33,11 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Mark Otto
-  url: https://twitter.com/mdo
-  email: markdotto@gmail.com
+  name: Sundara Tejaswi Digumarti and Krishna Manaswi Digumarti
+  url: about.md
+  email: 
 
 # Custom vars
-version: 3.0.0
+version: 1.0.0
 github:
-  repo: https://github.com/poole/poole
+  repo: https://github.com/tejaswid/wikitm
