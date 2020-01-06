@@ -3,7 +3,7 @@ title: WikiTM
 tagline: A wiki for tools used in and around robotics.
 url: https://tejaswid.github.io/wikitm
 paginate: 1
-baseurl: http://tejaswid.github.io/wikitm/
+baseurl: https://tejaswid.github.io/wikitm/
 permalink: pretty
 
 # Gems
