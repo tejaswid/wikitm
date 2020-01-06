@@ -1,4 +1,4 @@
-theme: leap-day
+theme: jekyll-theme-leap-day
 plugins:
   - jekyll-seo-tag
   - jekyll-coffeescript
