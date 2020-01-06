@@ -1,6 +1,7 @@
 # Setup
 title: WikiTM
 tagline: A wiki for tools used in and around robotics.
+description: A wiki with tutorials and walkthroughs for technology and software used in robotics and related fields.
 url: https://tejaswid.github.io/wikitm
 paginate: 1
 baseurl: https://tejaswid.github.io/wikitm/
