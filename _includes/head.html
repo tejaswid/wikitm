@@ -7,11 +7,10 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
+  <!-- If we are on the home page, then print the website title and tagline, else just the title -->
   <title>
-    <!-- If we are on the home page, i.e. the title in of the page is Home then print the website title and tagline -->
     {% if page.title == "Home" %}
       {{ site.title }}{% if site.tagline %} &middot; {{ site.tagline }}{% endif %}
-    <!-- Otherwise just print the website title and omit the tagline-->
     {% else %}
       {{ page.title }} &middot; {{ site.title }}
     {% endif %}
