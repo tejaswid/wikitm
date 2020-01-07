@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: about.md
+permalink: wikitm/about.md
 ---
 
 <p class="message">
