@@ -8,15 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
+    <!-- If we are on the home page, i.e. the title in of the page is Home then print the website title and tagline -->
     {% if page.title == "Home" %}
       {{ site.title }}{% if site.tagline %} &middot; {{ site.tagline }}{% endif %}
+    <!-- Otherwise just print the website title and omit the tagline-->
     {% else %}
       {{ page.title }} &middot; {{ site.title }}
     {% endif %}
   </title>
 
+  <!-- Add stylesheet -->
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  <!-- Add Atom feed, like RSS feed so that programs looking for update on this website and find them -->
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/atom.xml">
 
+  <!-- Search engine optimization title is set to false -->
   {% seo title=false %}
 </head>
