@@ -11,10 +11,13 @@
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: $gray-4;
-
+  //color: $gray-4;
+  color: rgba(255,255,255,.5);
+  background-color: #202020
+  
   a {
-    color: inherit;
+    //color: inherit;
+    color: #fff
   }
 
   small {
