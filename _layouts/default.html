@@ -8,7 +8,8 @@
     <!-- This is the file _includes/sidebar.html -->
     {% include sidebar.html %}
 
-    <header class="masthead">
+    <div class="container content">
+      <header class="masthead">
         <!-- Top navigation bar -- Webpage name-->
         <h3 class="masthead-title">
           <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
@@ -23,7 +24,6 @@
         </h3>
       </header>
 
-    <div class="container content">
       <main>
         {{ content }}
       </main>
