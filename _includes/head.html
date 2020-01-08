@@ -7,7 +7,7 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <!-- If we are on the home page, then print the website title and tagline, else just the title -->
+  <!-- This is the text that appears in the browser tab. Title and Tagline on the homepage, Title on the rest. -->
   <title>
     {% if page.title == "Home" %}
       {{ site.title }}{% if site.tagline %} &middot; {{ site.tagline }}{% endif %}
