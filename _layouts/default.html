@@ -10,14 +10,16 @@
 
     <div class="container content">
       <header class="masthead">
+        <!-- Top navigation bar -- Webpage name-->
         <h3 class="masthead-title">
           <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-          <small>{{ site.tagline }}</small>
+          <!-- Uncomment to have the tagline in the top navigation -->
+          <!-- <small>{{ site.tagline }}</small> -->
 
           <!-- Top navigation bar. Takes entries from pages_list in _config.yml-->
           {% for page in site.pages_list %}
           &nbsp;&nbsp;&nbsp;
-          <small><a href="{{ page[1]  }}">{{ page[0] }}</a></small>
+          <small><a href="{{site.baseurl}}{{ page[1]  }}">{{ page[0] }}</a></small>
           {% endfor %}
         </h3>
       </header>
