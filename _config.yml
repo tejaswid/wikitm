@@ -1,3 +1,7 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
 # Setup
 title: WikiTM
 tagline: A wiki for tools used in and around robotics.
