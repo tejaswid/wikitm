@@ -130,15 +130,15 @@ a.sidebar-nav-item:focus {
 // If the screen size is larger than 48em expand the width of the content to max screen.
 @media (min-width: 48em) {
   .content {
-    // max-width: 38rem;
-    margin-left: 10rem;
+    max-width: 100%; // 38rem
+    margin-left: 10rem; // 20rem;
     margin-right: 2rem;
   }
 }
-
+// If the screen is larger than 64em
 @media (min-width: 64em) {
   .content {
-    margin-left: 22rem;
+    margin-left: 12rem; // 22rem;
     margin-right: 4rem;
   }
 }
