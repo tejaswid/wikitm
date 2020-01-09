@@ -18,8 +18,12 @@
 
   <!-- Add stylesheet -->
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
-  <!-- Add Atom feed, like RSS feed so that programs looking for update on this website and find them -->
+  
+  <!-- Add Atom feed, like RSS feed so that programs looking for update on this website and find them. Here we are specifying an alternate version of the website -->
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/atom.xml">
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicon.ico">
 
   <!-- Search engine optimization title is set to false -->
   {% seo title=false %}
