@@ -53,20 +53,6 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
-/*Sidebar footer
-* move it to the bottom if the size of the screen is larger than 48em
-*/
-
-@media (min-width: 48em) {
-  .sidebar-footer
-  {
-    position: absolute;
-    bottom: 0rem;
-    right: 0rem;
-    left: 0rem;
-  }
-}
-
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
