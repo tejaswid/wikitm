@@ -53,6 +53,15 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
+/*Sidebar footer*/
+.sidebar-footer
+{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
