@@ -31,9 +31,12 @@
       <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
 
-    <div class="sidebar-footer">
-      <p>Released under MIT License.</p>
-      <p>&copy; {{ site.time | date: '%Y' }}. <br> Krishna Manaswi Digumarti and Sundara Tejaswi Digumarti. <br> All rights reserved.</p>
-    </div>
+    {% if window.width > 768 %}
+      <div class="sidebar-footer">
+        <p>Released under MIT License.</p>
+        <p>&copy; {{ site.time | date: '%Y' }}. Krishna Manaswi Digumarti and Sundara Tejaswi Digumarti. <br> All rights reserved.
+        </p>
+      </div>
+    {% endif %}
   </div>
 </div>
