@@ -18,15 +18,15 @@
 
 .container {
   max-width: 38rem;
-  padding-left:  1.5rem;
-  padding-right: 1.5rem;
+  padding-left:  0.5rem; //1.5rem;
+  padding-right: 0.5rem; //1.5rem;
   margin-left:  auto;
   margin-right: auto;
 }
 
 .content {
-  padding-top:    2rem; //4rem;
-  padding-bottom: 2rem; //4rem;
+  padding-top:    1rem; //4rem;
+  padding-bottom: 1rem; //4rem;
 }
 // If the screen size is larger than 48em expand the width of the content to max screen.
 @media (min-width: 48em) {
