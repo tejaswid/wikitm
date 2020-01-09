@@ -127,11 +127,11 @@ a.sidebar-nav-item:focus {
   color: #710000;
   background-color: #f9f9f9;
 }
-
+// If the screen size is larger than 48em expand the width of the content to max screen.
 @media (min-width: 48em) {
   .content {
-    max-width: 100%;
-    margin-left: 20rem;
+    // max-width: 38rem;
+    margin-left: 10rem;
     margin-right: 2rem;
   }
 }
