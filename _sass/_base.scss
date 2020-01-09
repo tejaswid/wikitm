@@ -19,8 +19,20 @@ html {
   font-size: $root-font-size;
   line-height: $root-line-height;
 
-  @media (min-width: $large-breakpoint) {
-    font-size: $large-font-size;
+  // @media (min-width: $large-breakpoint) {
+  //   font-size: $large-font-size;
+  // }
+}
+// if the screeen size is larger than 48em set font size as 16px
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+// if the screeen size is larger than 58em set font size as 20px
+@media (min-width: 58em) {
+  html {
+    font-size: 20px;
   }
 }
 

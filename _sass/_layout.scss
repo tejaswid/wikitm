@@ -2,6 +2,20 @@
 //
 // Styles for managing the structural hierarchy of the site.
 
+/*
+ * Contents
+ *
+ * Container
+ * Reverse layout
+ * Footer
+ */
+
+/* Container
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.sidebar`.
+ */
+
 .container {
   max-width: 38rem;
   padding-left:  1.5rem;
@@ -10,6 +24,55 @@
   margin-right: auto;
 }
 
+.content {
+  padding-top:    4rem;
+  padding-bottom: 4rem;
+  color: #710000;
+  background-color: #f9f9f9;
+}
+// If the screen size is larger than 48em expand the width of the content to max screen.
+@media (min-width: 48em) {
+  .content {
+    max-width: 100%; // 38rem
+    margin-left: 18rem; // 20rem;
+    margin-right: 2rem;
+  }
+}
+// If the screen is larger than 64em
+@media (min-width: 64em) {
+  .content {
+    margin-left: 20rem; // 22rem;
+    margin-right: 4rem;
+  }
+}
+
+/*
+ * Reverse layout
+ *
+ * Flip the orientation of the page by placing the `.sidebar` on the right.
+ */
+
+@media (min-width: 48em) {
+  .layout-reverse .sidebar {
+    left: auto;
+    right: 0;
+  }
+  .layout-reverse .content {
+    margin-left: 2rem;
+    margin-right: 20rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .layout-reverse .content {
+    margin-left: 4rem;
+    margin-right: 22rem;
+  }
+}
+
+/*
+* Footer
+*/
 footer {
   margin-bottom: 2rem;
 }
