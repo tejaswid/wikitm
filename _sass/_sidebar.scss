@@ -5,12 +5,14 @@
  * out above content in mobile and later moves to the side with wider viewports.
  */
 
+// sidebar is normally on the top
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
+// if the screen size is larger than 48em then put the sidebar on the side
 @media (min-width: 48em) {
   .sidebar {
     position: fixed;
