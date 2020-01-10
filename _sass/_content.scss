@@ -1,42 +1,25 @@
-// Layout
-//
-// Styles for managing the structural hierarchy of the site.
+// Content and footer style
 
-/*
- * Contents
- *
- * Container
- * Reverse layout
- * Footer
+/* Content
  */
-
-/* Container
- *
- * Align the contents of the site above the proper threshold with some margin-fu
- * with a 25%-wide `.sidebar`.
- */
-
-.container {
-  // max-width: calc(#{$width-medium-screen} - 6rem); // Have some side margins for small screens
-  padding-left:  1rem;
-  padding-right: 1rem;
+.content {
   margin-left:  auto;
   margin-right: auto;
-}
-
-.content {
+  margin-top: 30rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
   padding-top:    1rem;
   padding-bottom: 1rem;
-}
-// If the screen size is medium or large,
-// expand the width of the content to max screen width.
-@media (min-width: $width-medium-screen) {
-  .content {
+
+  // If the screen size is medium or large,
+  // expand the width of the content to max screen width.
+  @media (min-width: $width-medium-screen) {
     // max-width: 100%; // 38rem
     margin-left: calc(#{$width-sidebar} + 2rem); // 20rem;
     margin-right: 2rem;
   }
 }
+
 
 /*
  * Reverse layout - This is not properly implemented.

@@ -1,0 +1,56 @@
+.topbar-nav {
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+  	background-color: #303030;
+  	overflow: hidden;
+	// colour of links is white
+	a {
+		color: #fff;
+	}
+
+	// adjust font  and padding based on screen size
+	font-size: $root-font-size;
+	@media (min-width: $width-medium-screen)
+	{
+		font-size: $font-size-medium-screen;
+		padding-left: 2rem;
+	}
+	@media (min-width: $width-large-screen)
+	{
+		font-size: $font-size-large-screen;
+		padding-left: 4rem;
+	}
+
+	ul {
+		overflow: hidden;
+		list-style-type: none;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+
+	}
+}
+
+
+.topbar-nav-item {
+	line-height: 1.75;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+a.topbar-nav-item:hover,
+a.topbar-nav-item:focus {
+	text-decoration: underline;
+}
+.topbar-nav-item.active {
+	font-weight: bold;
+}

@@ -5,26 +5,39 @@
   {% include head.html %}
 
   <body>
+    <header class="masthead" >
+      <!-- Webpage title -->
+      <h1 class="masthead-title">
+        <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+        <!-- Add a line break if the screen is small -->
+        <span class="small-screen"></span>
+        <!-- Uncomment to have the tagline in the top navigation -->
+        <small>{{ site.tagline }}</small>
+      </h1>
+
+      <!-- Top navigation bar. Takes entries from pages_list in _config.yml-->
+      <div class="topbar-nav">
+        <ul>
+          <li><a class="topbar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
+
+          {% assign pages_list = site.pages %}
+          {% for node in pages_list %}
+            {% if node.title != null %}
+              {% if node.layout == "page" %}
+                <!-- &nbsp;&nbsp;&nbsp; -->
+                <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </header>
+
     <!-- This is the file _includes/sidebar.html -->
     {% include sidebar.html %}
 
-    <div class="container content">
-      <!-- header class="masthead" -->
-        <!-- Top navigation bar -- Webpage name-->
-        <!-- h3 class="masthead-title" -->
-          <!-- a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a -->
-          <!-- Uncomment to have the tagline in the top navigation -->
-          <!-- <small>{{ site.tagline }}</small> -->
-
-          <!-- Top navigation bar. Takes entries from pages_list in _config.yml-->
-          <!-- {% for page in site.pages_list %} -->
-          <!-- &nbsp;&nbsp;&nbsp; -->
-          <!-- <small><a href="{{site.baseurl}}{{ page[1]  }}">{{ page[0] }}</a></small> -->
-          <!-- {% endfor %} -->
-        <!-- </h3> -->
-      <!-- </header> -->
-
-      <main>
+    <div>
+      <main class="content">
         {{ content }}
       </main>
 
