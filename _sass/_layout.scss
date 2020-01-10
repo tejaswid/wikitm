@@ -17,56 +17,43 @@
  */
 
 .container {
-  max-width: 38rem;
-  padding-left:  0.5rem; //1.5rem;
-  padding-right: 0.5rem; //1.5rem;
+  // max-width: calc(#{$width-medium-screen} - 6rem); // Have some side margins for small screens
+  padding-left:  1rem;
+  padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
 }
 
 .content {
-  padding-top:    1rem; //4rem;
-  padding-bottom: 1rem; //4rem;
+  padding-top:    1rem;
+  padding-bottom: 1rem;
 }
-// If the screen size is larger than 48em expand the width of the content to max screen.
-@media (min-width: 48em) {
+// If the screen size is medium or large,
+// expand the width of the content to max screen width.
+@media (min-width: $width-medium-screen) {
   .content {
-    max-width: 100%; // 38rem
-    margin-left: 18rem; // 20rem;
+    // max-width: 100%; // 38rem
+    margin-left: calc(#{$width-sidebar} + 2rem); // 20rem;
     margin-right: 2rem;
-  }
-}
-// If the screen is larger than 64em
-@media (min-width: 64em) {
-  .content {
-    margin-left: 20rem; // 22rem;
-    margin-right: 4rem;
   }
 }
 
 /*
- * Reverse layout
+ * Reverse layout - This is not properly implemented.
  *
  * Flip the orientation of the page by placing the `.sidebar` on the right.
+ * To use this add .layout-reverse to the div class in _includes/sidebar.html
  */
-
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
-  }
-}
+// @media (min-width: $width-medium-screen) {
+//   .layout-reverse .sidebar {
+//     left: auto;
+//     right: 0;
+//   }
+//   .layout-reverse .content {
+//     margin-left: 2rem;
+//     margin-right: calc(#{$width-sidebar} + 2rem);
+//   }
+// }
 
 /*
 * Footer

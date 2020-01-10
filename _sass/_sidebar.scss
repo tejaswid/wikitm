@@ -12,14 +12,14 @@
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
-// if the screen size is larger than 48em then put the sidebar on the side
-@media (min-width: 48em) {
+// if the screen size is larger than medium screen then put the sidebar on the side
+@media (min-width: $width-medium-screen) {
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
+    width: $width-sidebar;
     text-align: left;
   }
 }
@@ -59,7 +59,7 @@ a.sidebar-nav-item:focus {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
-@media (min-width: 48em) {
+@media (min-width: $width-medium-screen) {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;

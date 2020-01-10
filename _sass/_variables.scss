@@ -23,8 +23,12 @@ $link-color: $blue;
 
 $border-color: #e5e5e5;
 
-$large-breakpoint: 38em;
-$large-font-size: 20px;
+$width-medium-screen: 48em;
+$width-large-screen: 58em;
+$width-sidebar: 18rem;
+
+$font-size-medium-screen: 16px;
+$font-size-large-screen: 20px;  
 
 $code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $code-color: #bf616a;
