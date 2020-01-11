@@ -1,63 +1,39 @@
 <!doctype html>
 <html lang="en">
 
-  <!-- This is the file _includes/head.html -->
-  {% include head.html %}
+<!-- This is the file _includes/head.html -->
+{% include tab_title.html %}
 
-  <body>
-    <header class="masthead" >
-      <!-- Webpage title -->
-      <h1 class="masthead-title">
-        <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-        <!-- Add a line break if the screen is small -->
-        <span class="small-screen"></span>
-        <!-- Uncomment to have the tagline in the top navigation -->
-        <small>{{ site.tagline }}</small>
-      </h1>
+<body>
+  <!-- Header. This is the file _includes/header.html -->
+  {% include header.html %}
 
-      <!-- Top navigation bar. Takes entries from pages_list in _config.yml-->
-      <div class="topbar-nav">
-        <ul>
-          <li><a class="topbar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
+  <!-- Sidebar. This is the file _includes/sidebar.html -->
+  {% include sidebar.html %}
 
-          {% assign pages_list = site.pages %}
-          {% for node in pages_list %}
-            {% if node.title != null %}
-              {% if node.layout == "page" %}
-                <!-- &nbsp;&nbsp;&nbsp; -->
-                <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </header>
+  <div class="content">
+    <main>
+      {{ content }}
+    </main>
 
-    <!-- This is the file _includes/sidebar.html -->
-    {% include sidebar.html %}
+    <!-- This is the footer-->
+    <footer>
+      <small>
+        &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Krishna Manaswi Digumarti and Sundara Tejaswi Digumarti. Powered by Jekyll and Hyde. All rights reserved.
+      </small>
+    </footer>
+  </div>
 
-    <div>
-      <main class="content">
-        {{ content }}
-      </main>
+  {% if site.ga_analytics %}
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+   ga('create', '{{ site.ga_analytics }}', 'auto');
+   ga('send', 'pageview');
+ </script>
+ {% endif %}
 
-      <!-- This is the footer-->
-      <footer class="footer">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Krishna Manaswi Digumarti and Sundara Tejaswi Digumarti. Powered by Jekyll and Hyde. All rights reserved.
-        </small>
-      </footer>
-    </div>
-
-    {% if site.ga_analytics %}
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-       ga('create', '{{ site.ga_analytics }}', 'auto');
-       ga('send', 'pageview');
-     </script>
-    {% endif %}
-  </body>
+</body>
 </html>

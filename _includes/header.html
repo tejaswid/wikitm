@@ -1,0 +1,27 @@
+<div class="masthead" >
+  <!-- Webpage title -->
+  <h1 class="masthead-title">
+    <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+    <!-- Add a line break if the screen is small -->
+    <span class="small-screen"></span>
+    <!-- Uncomment to have the tagline in the top navigation -->
+    <small>{{ site.tagline }}</small>
+  </h1>
+
+  <!-- Top navigation bar. Takes entries from pages_list in _config.yml-->
+  <div class="topbar-nav">
+    <ul>
+      <li><a class="topbar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+      {% if node.title != null %}
+      {% if node.layout == "page" %}
+      <!-- &nbsp;&nbsp;&nbsp; -->
+      <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

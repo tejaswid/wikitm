@@ -8,7 +8,18 @@
   left: 0;
   right: 0;
   padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  
+  height: 6.25rem;
+  // adjust height for very small screens since the tagline will take another line
+  @media (max-width: $width-very-small-screen)
+  {
+    height: 7.5rem;
+  }
+
 }
 
 .masthead-title {
@@ -32,7 +43,7 @@
     text-align: center;
   }
   // for screens that are even smaller reduce the font size
-  @media (max-width: $width-small-screen-magic)
+  @media (max-width: $width-very-small-screen)
   {
     font-size: 1.5rem;
   }

@@ -11,11 +11,16 @@
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
-  margin-top: 7rem;
-}
-// if the screen size is larger than medium screen then put the sidebar on the side
-@media (min-width: $width-medium-screen) {
-  .sidebar {
+  margin-top: 6.25rem;
+
+  // adjust height for very small screens since the tagline will take another line
+  @media (max-width: $width-very-small-screen)
+  {
+    height: 7.5rem;
+  }
+
+  // if the screen size is larger than medium screen then put the sidebar on the side
+  @media (min-width: $width-medium-screen) {
     position: fixed;
     top: 0;
     left: 0;
@@ -60,7 +65,7 @@ a.sidebar-nav-item:focus {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
-@media (min-width: $width-medium-screen) {
+ @media (min-width: $width-medium-screen) {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;

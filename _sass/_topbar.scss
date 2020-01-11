@@ -1,16 +1,13 @@
 .topbar-nav {
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 	padding-left: 1rem;
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
-  	background-color: #303030;
-  	overflow: hidden;
+	background-color: #303030;
 	// colour of links is white
 	a {
 		color: #fff;
 	}
 
-	// adjust font  and padding based on screen size
+	// adjust font and padding to first tab based on screen size
 	font-size: $root-font-size;
 	@media (min-width: $width-medium-screen)
 	{
@@ -29,20 +26,22 @@
 	}
 
 	li {
-		float: left;
-	}
-
-	li a {
-
+		float: left;	// horizontal stacking
 	}
 }
 
-
 .topbar-nav-item {
-	line-height: 1.75;
+	// These first value should be the sum of the subsequent three values
+	// for vertically centered text
+	height: 2rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	line-height: 1.5rem;
+	
 	display: block;
 	text-decoration: none;
 	text-align: center;
+	
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
@@ -51,6 +50,7 @@ a.topbar-nav-item:hover,
 a.topbar-nav-item:focus {
 	text-decoration: underline;
 }
+
 .topbar-nav-item.active {
 	font-weight: bold;
 }
