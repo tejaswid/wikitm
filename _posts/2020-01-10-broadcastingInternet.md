@@ -1,3 +1,8 @@
+---
+layout: page
+title: Broadcasting internet
+permalink: /broadcastingInternet/
+---
 # Broadcasting internet from your Windows computer
 
 Scenario: You receive internet through an ethernet cable (LAN) or a USB dongle. You want to share this internet to laptops, mobile phones, tablets etc.
@@ -33,9 +38,9 @@ Open command prompt.
 	```
 	It should now say started.
 
-5. After doing this, open network and sharing center, and chose change adapter settings in the left side panel. There, right click on the connection you want to share. It could be your LAN or Reliance. Open up properties.
+5. After doing this, open network and sharing center, and chose change adapter settings in the left side panel. There, right click on the connection you want to share. It could be your LAN or USB device. Open up properties.
 
-6. In the properties window, click on the sharing tab and check Allow other network users to connect through this internet connection. No need to tick the second box.
+6. In the properties window, click on the sharing tab and check *Allow other network users to connect through this internet connection*. No need to tick the second box.
 
 7. Try connecting to this network on your phone or tablet. Everything should work. Access a web page to make sure it is working.
 
@@ -49,4 +54,4 @@ In general, the network gets deleted when you restart. To start it, you will hav
 
 Steps 5 and 6 are not necessary every time. If you are changing the source from which you are sharing, then you have to do this. You can only share, through wifi, the internet you are getting from an ethernet cable (LAN), or some other thing like Reliance. You cannot connect to a new wifi signal when you are sharing since your wifi is now acting like a broadcaster.
 
-If you move to your office and want to connect to wifi there, your wifi will be disabled (indicated by a red x mark). you have to first stop this network to free your wifi card. So, save step 8 as another batch file. Now you have a start button and a stop button on your desktop. Simply click them whenever you want
+If you move to another location and want to connect to wifi there, your wifi will be disabled (indicated by a red x mark). You have to first stop this network to free your wifi card. So, save step 8 as another batch file. Now you have a start button and a stop button on your desktop. Simply click them whenever you want
