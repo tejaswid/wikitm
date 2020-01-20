@@ -1,5 +1,4 @@
 .topnav {
-	margin-bottom: 0.5rem;
 	padding-left: 1rem;
 	background-color: #303030;
 
@@ -21,16 +20,17 @@
 		overflow: hidden;
 		list-style-type: none;
 	}
-
 	/* List items */
 	li {
 		float: left;	// horizontal stacking of list items
 	}
 }
 
+/* Common style for list items and dropdown*/
 .topnav-item,
 .topnav-dropdown{
 	color: white;
+	// background-color: blue;
 	// These first value should be the sum of the subsequent three values
 	// for vertically centered text
 	height: 2rem;
@@ -53,7 +53,7 @@
 .topnav-dropdown
 {
 	float: left;
-  	overflow: hidden;
+  	// overflow: hidden;
 }
 
 .dropbtn
@@ -63,7 +63,9 @@
   	background-color: inherit;
   	font-family: inherit; /* Important for vertical align on mobile phones */
   	margin: 0; /* Important for vertical align on mobile phones */
-  	padding: 0px 0px;
+  	padding-top: 0rem;
+  	padding-bottom: 0rem;
+  	height: 1.5rem;
   	border: none;
   	// outline: none;
   	cursor:pointer;	/* make the cursor a hand*/
@@ -71,27 +73,31 @@
   	display: inline-block;
 }
 .dropbtn:hover, .dropbtn:focus {
-	background-color: red;
+	text-decoration: underline;
 }
 
 .dropdown-content {
   	display: none;	// initially do not display
-  	position: absolute;
-  	background-color: #f9f9f9;
+  	position: fixed;
+  	margin-top: 1.75rem;
+  	background-color: #454545;
   	min-width: 160px;
-  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  	z-index: 1;
+  	// box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	// z-index: 1;
 
   	a {
   		float: none;
-  		color: black;
-  		padding: 12px 16px;
+  		color: white;
   		text-decoration: none;
   		display: block;
   		text-align: left;
+  		padding-left: 1rem;
+  		padding-right: 1rem;
+  		padding-top: 0.25rem;
+  		padding-bottom: 0.25rem;
   	}
-	a:hover {
-  		background-color: #ddd;
+	a:hover, a:focus {
+  		text-decoration: underline; 
 	}
 }
 
