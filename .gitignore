@@ -4,6 +4,6 @@ _site/
 .jekyll-cache
 _pdf
 .DS_Store
-.idea
-.sublime-project
-.sublime-workspace
+*.idea
+*.sublime-project
+*.sublime-workspace
