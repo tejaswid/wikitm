@@ -13,15 +13,22 @@
     <ul>
       <li><a class="topbar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
 
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-      {% if node.title != null %}
-      {% if node.layout == "page" %}
-      <!-- &nbsp;&nbsp;&nbsp; -->
-      <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
-      {% endif %}
-      {% endif %}
-      {% endfor %}
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+      
+          {% assign pages_list = site.pages %}
+          {% for node in pages_list %}
+          {% if node.title != null %}
+          {% if node.layout == "page" %}
+          <!-- &nbsp;&nbsp;&nbsp; -->
+          <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
     </ul>
   </div>
 </div>
