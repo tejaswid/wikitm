@@ -1,23 +1,21 @@
 // Master header
 
 .masthead {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
-  
+  background-color: white;
   height: 6.25rem;
   // adjust height for very small screens since the tagline will take another line
   @media (max-width: $width-very-small-screen)
   {
     height: 7.5rem;
   }
-
 }
 
 .masthead-title {
