@@ -48,21 +48,21 @@
   //color: $gray-4;
 
   a {
-    color: #fff;
+    color: white;
   }
 
   small {
     font-size: 75%;
     font-weight: 400;
     opacity: .5;
-    color: #fff;
+    color: white;
   }
 }
 
 // additional critera to make tagline go to 
 // next line for small screens
 .small-screen {
-  @media (max-width: 30rem)
+  @media (max-width: $width-very-small-screen)
   {
     display: block;
   }
