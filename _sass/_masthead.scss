@@ -1,13 +1,13 @@
 // Master header
 
 .masthead {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  width: 100%;
+  // padding-bottom: 0.5rem;
+  // width: 100%;
   overflow: hidden;
   background-color: white;
   height: 6.25rem;
@@ -16,6 +16,7 @@
   {
     height: 7.5rem;
   }
+  // background-color: red;
 }
 
 .masthead-title {
@@ -43,7 +44,6 @@
   {
     font-size: 1.5rem;
   }
-  //color: $gray-4;
 
   a {
     color: white;
