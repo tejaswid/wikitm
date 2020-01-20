@@ -1,11 +1,7 @@
-.topbar-nav {
+.topnav {
 	margin-bottom: 0.5rem;
 	padding-left: 1rem;
 	background-color: #303030;
-	// colour of links is white
-	a {
-		color: #fff;
-	}
 
 	// adjust font and padding to first tab based on screen size
 	font-size: $root-font-size;
@@ -20,17 +16,21 @@
 		padding-left: 4rem;
 	}
 
+	/* Unordered list - this is what the navigation bar is */
 	ul {
 		overflow: hidden;
 		list-style-type: none;
 	}
 
+	/* List items */
 	li {
-		float: left;	// horizontal stacking
+		float: left;	// horizontal stacking of list items
 	}
 }
 
-.topbar-nav-item {
+.topnav-item,
+.topnav-dropdown{
+	color: white;
 	// These first value should be the sum of the subsequent three values
 	// for vertically centered text
 	height: 2rem;
@@ -45,12 +45,67 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
-
-a.topbar-nav-item:hover,
-a.topbar-nav-item:focus {
-	text-decoration: underline;
-}
-
-.topbar-nav-item.active {
+/* Active nav item links appears in bold */
+.topnav-item.active {
 	font-weight: bold;
 }
+
+.topnav-dropdown
+{
+	float: left;
+  	overflow: hidden;
+}
+
+.dropbtn
+{
+	font-size: inherit;
+  	color: inherit;
+  	background-color: inherit;
+  	font-family: inherit; /* Important for vertical align on mobile phones */
+  	margin: 0; /* Important for vertical align on mobile phones */
+  	padding: 0px 0px;
+  	border: none;
+  	// outline: none;
+  	cursor:pointer;	/* make the cursor a hand*/
+  	float: left;
+  	display: inline-block;
+}
+.dropbtn:hover, .dropbtn:focus {
+	background-color: red;
+}
+
+.dropdown-content {
+  	display: none;	// initially do not display
+  	position: absolute;
+  	background-color: #f9f9f9;
+  	min-width: 160px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	z-index: 1;
+
+  	a {
+  		float: none;
+  		color: black;
+  		padding: 12px 16px;
+  		text-decoration: none;
+  		display: block;
+  		text-align: left;
+  	}
+	a:hover {
+  		background-color: #ddd;
+	}
+}
+
+.show {
+  display: block;
+}
+
+
+// /* Add a grey background color to dropdown links on hover */
+// .dropdown-content a:hover {
+//   background-color: #ddd;
+// }
+
+// /* Show the dropdown menu on hover */
+// .dropdown-content {
+//   display: block;
+// }

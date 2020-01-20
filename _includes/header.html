@@ -9,26 +9,53 @@
   </h1>
 
   <!-- Top navigation bar. Takes entries from pages_list in _config.yml-->
-  <div class="topbar-nav">
+  <div class="topnav">
     <ul>
-      <li><a class="topbar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
+      <!-- Home button -->
+      <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
 
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-        <div class="dropdown-content">
-      
-          {% assign pages_list = site.pages %}
-          {% for node in pages_list %}
-          {% if node.title != null %}
-          {% if node.layout == "page" %}
-          <!-- &nbsp;&nbsp;&nbsp; -->
-          <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
-          {% endif %}
-          {% endif %}
-          {% endfor %}
+      <!-- About button -->
+      <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/about/">About</a></li>
+
+      <div class="topnav-dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Topics</button>
+        <div class="dropdown-content" id="topics_content">
+          <a href=monkey>monk</a>
+          <a href=monkey>mdonk</a>
         </div>
-      </li>
+      </div>
 
     </ul>
   </div>
 </div>
+
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function toggleDropdown() {
+  document.getElementById("topics_content").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var topics_cont = document.getElementById("topics_content");
+    if (topics_cont.classList.contains('show')) {
+      topics_cont.classList.remove('show');
+    }
+  }
+}
+</script>
+
+
+
+<!-- {% for topic in site.topics_list %} -->
+          <!-- &nbsp;&nbsp;&nbsp; -->
+          <!-- <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li> -->
+          <!-- <a href=donkey>donkey</a> -->
+          <!-- {% endfor %} -->
+
+
+
+
