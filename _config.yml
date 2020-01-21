@@ -48,5 +48,12 @@ github:
   repo: https://github.com/tejaswid/wikitm
 
 # For navigation bar at the top
-pages_list:       
-  About: '/about/'
+# pages_list:       
+#   About: '/about/'
+
+topics_list:
+  SLURM: '/slurm/home/'
+  Miscellaneous: '/misc/home/'
+  LinuxWalkthroughs: '/linux_walk/home/'
+  ROSWalkthroughs: '/ros_walk/home/'
+  Docker: '/docker/home/'

@@ -20,8 +20,9 @@
       <div class="topnav-dropdown">
         <button class="dropbtn" onclick="toggleDropdown()">Topics</button>
         <div class="dropdown-content" id="topics_content">
-          <a href=monkey>monk</a>
-          <a href=monkey>mdonk</a>
+          {% for topic in site.topics_list %}
+            <a href="{{ site.baseurl }}{{ topic[1] }}">{{ topic[0] }}</a>
+          {% endfor %}
         </div>
       </div>
 

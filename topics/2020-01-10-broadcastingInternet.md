@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Broadcasting internet
-permalink: /broadcastingInternet/
+permalink: /misc/broadcastingInternet/
 ---
 # Broadcasting internet from your Windows computer
 
