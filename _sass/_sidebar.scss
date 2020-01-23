@@ -12,7 +12,6 @@
   color: rgba(255,255,255,.5);
   background-color: #202020;
   margin-top: 6.25rem;
-  z-index: -1;
 
   // adjust height for very small screens since the tagline will take another line
   @media (max-width: $width-very-small-screen)
