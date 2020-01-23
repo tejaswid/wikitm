@@ -8,7 +8,7 @@ tagline: A mostly-tech wiki.
 description: A wiki for technology and software used in robotics and related fields.
 url: https://tejaswid.github.io/wikitm
 paginate: 1
-baseurl: https://tejaswid.github.io/wikitm
+baseurl: #https://tejaswid.github.io/wikitm
 permalink: pretty
 
 # Gems

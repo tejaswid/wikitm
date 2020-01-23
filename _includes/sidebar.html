@@ -1,13 +1,15 @@
 <div class="sidebar">
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item{% if page.url == site.baseurl %}active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-
-      {% comment %}
-        If it is the home or about page then have the topics in the
-        sidebar
-      {% endcomment %}
       
+      {% comment %}
+        Dynamic part of the sidebar
+      {% endcomment %}
       <div class=sidebar-change>
+        {% comment %}
+          If it is the home or about page then have the topics in the
+        sidebar
+        {% endcomment %}
         {% if page.url == "/" or page.url == "/about/" %}
           <span class="sidebar-nav-item">Topics</span>
           {% for topic in site.topics_list %}
@@ -15,9 +17,13 @@
           {% endfor %}
         {% endif %}
 
-
+        {% comment %}
+          If it is one of the topic pages then use the links in the topic pages
+        {% endcomment %}
         {% for topic in site.topics_list %}
-
+          {% if page.url == topic[1] %}
+            <span class="sidebar-nav-item">{{ topic[0] }}</span>
+          {% endif %}
         {% endfor %}
       </div>
 <!--       {% assign pages_list = site.pages %}
