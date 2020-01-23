@@ -7,12 +7,12 @@
 	@media (min-width: $width-medium-screen)
 	{
 		font-size: $font-size-medium-screen;
-		padding-left: 2rem;
+		padding-left: $width-sidebar;
 	}
 	@media (min-width: $width-large-screen)
 	{
 		font-size: $font-size-large-screen;
-		padding-left: 4rem;
+		padding-left: $width-sidebar;
 	}
 
 	/* Unordered list - this is what the navigation bar is */
