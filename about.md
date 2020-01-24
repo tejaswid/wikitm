@@ -4,6 +4,11 @@ title: About
 permalink: /about/
 ---
 
+{% assign item_list = site.pages | where:"grouped_by","monkey" %}
+{% for item in site.collections-dir %}
+    * {{ item }}
+{% endfor %}
+
 This wiki is a collection of knowledge that we accumulated over the years learning about and working with robots and other cool technologies.
 
 Hope you find it useful.

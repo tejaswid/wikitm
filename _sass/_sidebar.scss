@@ -47,22 +47,38 @@
 .sidebar-nav {
   margin-bottom: 1rem;
 }
-.sidebar-nav-item {
+/* Sidebar nav item */
+.sidebar-nav-item{
   display: block;
   line-height: 1.75;
-}
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
-  text-decoration: underline;
-}
-.sidebar-nav-item.active {
-  font-weight: bold;
+
+  a:hover, a:focus {
+    text-decoration: underline;  
+  }
 }
 
+
 /* The part of the sidebar that changes based on topics*/
-.sidebar-change
+.sidebar-dynamic
 {
   padding-top: 1rem;
+}
+/* Header for the topics*/
+.sidebar-dynamic-header {
+  a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  a:hover, a:focus {
+    text-decoration: underline;  
+  }
+
+  display: block;
+  line-height: 1.75;
+  font-weight: bold;
+}
+/* sub-topics*/
+.sidebar-dynamic-item {
+  margin-left: 1rem;
 }
 
 /* Sticky sidebar

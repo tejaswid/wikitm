@@ -21,8 +21,8 @@
       <div class="topnav-dropdown">
         <button class="dropbtn" onclick="toggleDropdown()">Topics</button>
         <div class="dropdown-content" id="topics_content">
-          {% for topic in site.topics_list %}
-            <a href="{{ site.baseurl }}{{ topic[1] }}">{{ topic[0] }}</a>
+          {% for topic in site.collections %}
+            <a href="{{ site.baseurl | append: "/topics/" | append: topic.label }}">{{ topic.label | capitalize }}</a>
           {% endfor %}
         </div>
       </div>
@@ -49,15 +49,3 @@ window.onclick = function(e) {
   }
 }
 </script>
-
-
-
-<!-- {% for topic in site.topics_list %} -->
-          <!-- &nbsp;&nbsp;&nbsp; -->
-          <!-- <li><a class="topbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li> -->
-          <!-- <a href=donkey>donkey</a> -->
-          <!-- {% endfor %} -->
-
-
-
-

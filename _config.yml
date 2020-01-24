@@ -51,9 +51,17 @@ github:
 # pages_list:       
 #   About: '/about/'
 
+collections:
+  misc:
+    output: true
+  slurm:
+    output: true
+
+# collections-dir: topics
+
 topics_list:
   SLURM: '/slurm/home/'
-  Miscellaneous: '/misc/home/'
+  Miscellaneous: '/Miscellaneous/'
   LinuxWalkthroughs: '/linux_walk/home/'
   ROSWalkthroughs: '/ros_walk/home/'
   Docker: '/docker/home/'

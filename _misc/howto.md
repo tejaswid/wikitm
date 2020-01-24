@@ -1,7 +1,6 @@
 ---
 layout: page
 title: How to?
-permalink: /howTo/
 ---
 # How to?
 

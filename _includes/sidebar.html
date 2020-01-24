@@ -1,39 +1,36 @@
 <div class="sidebar">
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %}active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %}active{% endif %}" href={{ site.baseurl | append: "/" }}>Home</a>
       
-      {% comment %}
-        Dynamic part of the sidebar
-      {% endcomment %}
-      <div class=sidebar-change>
-        {% comment %}
-          If it is the home or about page then have the topics in the
-        sidebar
-        {% endcomment %}
+      {% comment %} Dynamic part of the sidebar {% endcomment %}
+      <div class=sidebar-dynamic>
+        {% assign coll_root_dir = {{ site.baseurl | append: site.collections-dir | append: "/" }} %}
+
+        {% comment %} If it is the home or about page then have the collections in the sidebar {% endcomment %}
         {% if page.url == "/" or page.url == "/about/" %}
           <span class="sidebar-nav-item">Topics</span>
-          {% for topic in site.topics_list %}
-            <a class="sidebar-nav-item" href="{{ site.baseurl }}{{ topic[1] }}">{{ topic[0] }}</a>
+          
+          {% for coll in site.collections %}
+            <a class="sidebar-nav-item" href={{ "../" | append: coll_root_dir | append: coll.label }}>{{ coll.label | capitalize }}</a>
+            <a class="sidebar-nav-item" href={{ coll.url }}>{{ coll.label | capitalize }}</a>
           {% endfor %}
         {% endif %}
 
-        {% comment %}
-          If it is one of the topic pages then use the links in the topic pages
-        {% endcomment %}
-        {% for topic in site.topics_list %}
-          {% if page.url == topic[1] %}
-            <span class="sidebar-nav-item">{{ topic[0] }}</span>
+        {% comment %} If it is one of the collection pages then have the colelction specific links {% endcomment %}
+        {% for coll in site.collections %}
+          {% comment %} Get collection name from current url {% endcomment %}
+          {% assign current_coll_name = page.url | split: "/" | last %}
+          
+          {% comment %} If it matches one of the collections {% endcomment %}
+          {% if current_coll_name == coll.label %}
+            {% comment %} Collection Home - index.html in the current folder of the site {% endcomment %}
+            <div class="sidebar-nav-item-header">
+              <a href="index.html">{{ coll.label | capitalize }}</a>
+            </div>
           {% endif %}
         {% endfor %}
       </div>
-<!--       {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %} -->
+
       <span class="sidebar-nav-item">Version {{ site.version }}</span>
     </nav>
 </div>

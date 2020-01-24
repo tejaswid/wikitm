@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Broadcasting internet
-permalink: /broadcastingInternet/
+grouped-by: monkey
 ---
 # Broadcasting internet from your Windows computer
 
