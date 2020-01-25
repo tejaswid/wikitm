@@ -78,7 +78,22 @@
 }
 /* sub-topics*/
 .sidebar-dynamic-item {
-  margin-left: 1rem;
+  display: block;
+  line-height: 1.75;
+  color: white;
+
+  ul {
+    overflow: hidden;
+    list-style-type: none;
+    padding-left: 0rem;
+  }
+  li {
+    border-color: white;
+    outline: white;
+  }
+  li:hover, li:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 /* Sticky sidebar

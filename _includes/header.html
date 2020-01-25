@@ -21,8 +21,14 @@
       <div class="topnav-dropdown">
         <button class="dropbtn" onclick="toggleDropdown()">Topics</button>
         <div class="dropdown-content" id="topics_content">
-          {% for topic in site.collections %}
-            <a href="{{ site.baseurl | append: "/topics/" | append: topic.label }}">{{ topic.label | capitalize }}</a>
+          {% for coll in site.collections %}
+            {% comment %} Skip Posts {% endcomment %}
+            {% if coll.label == "posts" %} 
+              {% continue %} 
+            {% endif %}
+
+            {% comment %} Link to the hompage of the topic {% endcomment %}
+            <a href={{ "../" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
           {% endfor %}
         </div>
       </div>

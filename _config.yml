@@ -47,17 +47,15 @@ version: 1.0.0
 github:
   repo: https://github.com/tejaswid/wikitm
 
-# For navigation bar at the top
-# pages_list:       
-#   About: '/about/'
-
 collections:
   misc:
     output: true
+    permalink: /:collection/:name
   slurm:
     output: true
+    permalink: /:collection/:name
 
-# collections-dir: topics
+collections_dir: topics
 
 topics_list:
   SLURM: '/slurm/home/'

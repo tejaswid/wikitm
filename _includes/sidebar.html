@@ -4,30 +4,40 @@
       
       {% comment %} Dynamic part of the sidebar {% endcomment %}
       <div class=sidebar-dynamic>
-        {% assign coll_root_dir = {{ site.baseurl | append: site.collections-dir | append: "/" }} %}
-
         {% comment %} If it is the home or about page then have the collections in the sidebar {% endcomment %}
         {% if page.url == "/" or page.url == "/about/" %}
           <span class="sidebar-nav-item">Topics</span>
           
           {% for coll in site.collections %}
-            <a class="sidebar-nav-item" href={{ "../" | append: coll_root_dir | append: coll.label }}>{{ coll.label | capitalize }}</a>
-            <a class="sidebar-nav-item" href={{ coll.url }}>{{ coll.label | capitalize }}</a>
+            <a class="sidebar-nav-item" href={{ "../" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
           {% endfor %}
         {% endif %}
 
         {% comment %} If it is one of the collection pages then have the colelction specific links {% endcomment %}
         {% for coll in site.collections %}
-          {% comment %} Get collection name from current url {% endcomment %}
-          {% assign current_coll_name = page.url | split: "/" | last %}
-          
-          {% comment %} If it matches one of the collections {% endcomment %}
-          {% if current_coll_name == coll.label %}
-            {% comment %} Collection Home - index.html in the current folder of the site {% endcomment %}
-            <div class="sidebar-nav-item-header">
+          {% comment %} Skip Posts {% endcomment %}
+          {% if coll.label == "posts" %} 
+            {% continue %} 
+          {% endif %}
+
+          {% if page.url contains coll.label %}
+            {% comment %} Link to hompage of the collection {% endcomment %}
+            <div class="sidebar-dynamic-header">
               <a href="index.html">{{ coll.label | capitalize }}</a>
             </div>
+
+            {% comment %} Links to files in the collection {% endcomment %}
+            <div class="sidebar-dynamic-item">
+              <ul>
+                {% for file in site[coll.label] %}
+                  <li>
+                    <a href={{file.url}}>{{ file.title | capitalize }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           {% endif %}
+
         {% endfor %}
       </div>
 
