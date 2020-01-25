@@ -28,7 +28,7 @@
             {% endif %}
 
             {% comment %} Link to the hompage of the topic {% endcomment %}
-            <a href={{ "../" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
+            <a href={{ site.baseurl | append:"/" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
           {% endfor %}
         </div>
       </div>

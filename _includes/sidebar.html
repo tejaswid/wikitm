@@ -32,7 +32,7 @@
               <ul>
                 {% for file in site[coll.label] %}
                   <li>
-                    <a href={{file.url}}>{{ file.title | capitalize }}</a>
+                    <a href={{site.baseurl | append:"/" | append:file.url }}>{{ file.title | capitalize }}</a>
                   </li>
                 {% endfor %}
               </ul>
