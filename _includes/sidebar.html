@@ -9,17 +9,18 @@
           <span class="sidebar-nav-item">Topics</span>
           
           {% for coll in site.collections %}
-            <a class="sidebar-nav-item" href={{ "../" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
+            {% comment %} Skip Posts {% endcomment %}
+            {% if coll.label == "posts" %} 
+              {% continue %} 
+            {% endif %}
+
+            {% comment %} Link to hompage of the collection {% endcomment %}
+            <a class="sidebar-nav-item" href={{ site.baseurl | append:"/" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
           {% endfor %}
         {% endif %}
 
         {% comment %} If it is one of the collection pages then have the colelction specific links {% endcomment %}
         {% for coll in site.collections %}
-          {% comment %} Skip Posts {% endcomment %}
-          {% if coll.label == "posts" %} 
-            {% continue %} 
-          {% endif %}
-
           {% if page.url contains coll.label %}
             {% comment %} Link to hompage of the collection {% endcomment %}
             <div class="sidebar-dynamic-header">
