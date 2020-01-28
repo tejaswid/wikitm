@@ -1,13 +1,12 @@
 ---
 layout: page
 title: Broadcasting internet
-grouped-by: monkey
 ---
 # Broadcasting internet from your Windows computer
 
-Scenario: You receive internet through an ethernet cable (LAN) or a USB dongle. You want to share this internet to laptops, mobile phones, tablets etc.
+Scenario: You receive internet through an ethernet cable (LAN) or a USB dongle. You want to create a hotspot and share this internet to other devices.
 
-Here is the simplest way to do it on a Windows system that has a suitable wifi card.
+Here is the simplest way to do it using the command prompt on a Windows system that has a suitable wifi card.
 
 Open command prompt.
 
@@ -18,7 +17,7 @@ Open command prompt.
 	```
 	Look for the property: Hosted network supported.  It should say yes here.
 
-2. Set up a network:
+2. Set up a network: Replace Some_Name and Some_Password with what you like.
 
 	```
 	netsh wlan set hostednetwork mode=allow ssid=Some_Name key=Some_Password
@@ -29,7 +28,7 @@ Open command prompt.
 	```
 	netsh wlan show hostednetwork
 	``` 
-	It should show you the details and in the status property, it should say not started
+	It should show you the details and in the status property. It should say not started.
 
 4. Now start the network:
 
@@ -50,8 +49,8 @@ Open command prompt.
 	netsh wlan stop hostednetwork The_Name_You_Gave_It
 	```
 
-In general, the network gets deleted when you restart. To start it, you will have to do steps 2 and 4 each time. To make it simple, you can open up notepad, paste these two lines (step 2 and 4) and save it as a .bat file. Put the file on your desktop, right click and run as administrator
+In general, the network gets deleted when you restart. To start it, you will have to do steps 2 and 4 each time. To make it simple, you can open up notepad, paste these two lines (step 2 and 4) and save it as a .bat file. Put the file on your desktop, right click and run as administrator.
 
-Steps 5 and 6 are not necessary every time. If you are changing the source from which you are sharing, then you have to do this. You can only share, through wifi, the internet you are getting from an ethernet cable (LAN), or some other thing like Reliance. You cannot connect to a new wifi signal when you are sharing since your wifi is now acting like a broadcaster.
+Steps 5 and 6 are not necessary every time. If you are changing the source from which you are sharing, then you have to do this. You can only share, through wifi, the internet you are getting from an ethernet cable (LAN), or some other internet dongle. You cannot connect to a new wifi signal when you are sharing since your laptop is now acting like a broadcaster.
 
 If you move to another location and want to connect to wifi there, your wifi will be disabled (indicated by a red x mark). You have to first stop this network to free your wifi card. So, save step 8 as another batch file. Now you have a start button and a stop button on your desktop. Simply click them whenever you want
