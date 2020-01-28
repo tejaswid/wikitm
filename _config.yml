@@ -48,16 +48,24 @@ github:
   repo: https://github.com/tejaswid/wikitm
 
 collections:
-  raspberry pi:
-    output: true
-    permalink: /collection/:name
-  linux walkthroughs:
+  linuxwalkthroughs:
+    menu_heading: "Linux Walkthroughs"
+    sequence: 1
     output: true
     permalink: /:collection/:name
   slurm:
+    menu_heading: "SLURM"
+    sequence: 3
     output: true
     permalink: /:collection/:name
-  miscellaneous:
+  rpi:
+    menu_heading: "Raspberry Pi"
+    sequence: 2
+    output: true
+    permalink: /:collection/:name
+  misc:
+    menu_heading: "Miscellaneous"
+    sequence: 4
     output: true
     permalink: /:collection/:name
 

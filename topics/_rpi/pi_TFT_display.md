@@ -129,5 +129,3 @@ If you reboot, you should be able to login without hassle.
 ## Configure to switch between TFT and HDMI
 
 TODO
-
-{% include links.html %}
