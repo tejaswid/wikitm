@@ -31,6 +31,10 @@
             <div class="sidebar-dynamic-item">
               <ul>
                 {% for file in site[coll.label] %}
+                  {% if file.name contains "index" %}
+                    {% continue %}
+                  {% endif %}
+
                   <li>
                     <a href={{site.baseurl | append:file.url }}>{{ file.title | capitalize }}</a>
                   </li>
