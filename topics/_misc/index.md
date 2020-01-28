@@ -9,6 +9,7 @@ layout: page
 {% if page.url contains coll.label %}
 
 {% for file in site[coll.label] %}
+{{file.name}}
 {% if file.name contains "index" %}
 	{% continue %}
 {% endif %}
