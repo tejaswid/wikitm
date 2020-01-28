@@ -21,14 +21,15 @@
       <div class="topnav-dropdown">
         <button class="dropbtn" onclick="toggleDropdown()">Topics</button>
         <div class="dropdown-content" id="topics_content">
-          {% for coll in site.collections %}
+          {% assign ordered_collections = site.collections | sort: 'sequence' %}
+          {% for coll in ordered_collections %}
             {% comment %} Skip Posts {% endcomment %}
             {% if coll.label == "posts" %} 
               {% continue %} 
             {% endif %}
 
             {% comment %} Link to the hompage of the topic {% endcomment %}
-            <a href={{ site.baseurl | append:"/" | append:coll.label | append:"/" }}>{{ coll.label | capitalize }}</a>
+            <a href={{ site.baseurl | append:"/" | append:coll.label | append:"/" }}>{{ coll.menu_heading }}</a>
           {% endfor %}
         </div>
       </div>
