@@ -56,10 +56,3 @@ collections:
     permalink: /:collection/:name
 
 collections_dir: topics
-
-topics_list:
-  SLURM: '/slurm/home/'
-  Miscellaneous: '/Miscellaneous/'
-  LinuxWalkthroughs: '/linux_walk/home/'
-  ROSWalkthroughs: '/ros_walk/home/'
-  Docker: '/docker/home/'
