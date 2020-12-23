@@ -16,7 +16,8 @@
   // If the screen size is medium or large,
   // expand the width of the content to max screen width.
   @media (min-width: $width-medium-screen) {
-    margin-left: calc(#{$width-sidebar} + 2rem);
+    //margin-left: calc(#{$width-sidebar} + 2rem);
+    margin-left: 2rem;
     margin-right: 2rem;
     margin-top: 6.25rem;
   }
