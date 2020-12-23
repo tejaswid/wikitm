@@ -1,7 +1,3 @@
-
-
-
-
 ## Thanks
 The theme for this wiki was inspired by the [Hyde](http://hyde.getpoole.com) and [Poole](https://getpoole.com/) themes for [Jekyll](http://jekyllrb.com). You may be interested in reading the story *The Strange Case of Dr. Jekyll and Mr. Hyde* to know more about these characters.
 
