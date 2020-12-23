@@ -3,8 +3,8 @@
   <div class="topnav">
     <ul>
       <!-- Webpage title -->
-      <li class="masthead-title">
-        <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+      <li>
+        <a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
         <!-- Add a line break if the screen is small -->
         <span class="small-screen"></span>
         <!-- Uncomment to have the tagline in the top navigation -->
