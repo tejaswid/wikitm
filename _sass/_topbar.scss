@@ -7,13 +7,11 @@
 	@media (min-width: $width-medium-screen)
 	{
 		font-size: $font-size-medium-screen;
-		//padding-left: calc(#{$width-sidebar} - 2rem);
 		padding-left: 2rem;
 	}
 	@media (min-width: $width-large-screen)
 	{
 		font-size: $font-size-large-screen;
-		//padding-left: calc(#{$width-sidebar} - 2rem);
 		padding-left: 2rem;
 	}
 
