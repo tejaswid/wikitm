@@ -47,7 +47,7 @@ Since 2013 the Open Source Robotics Foundation has been managing and maintaining
     <img src="{{ site.baseurl }}/assets/ros/turtles.png">
     Figure 2 - Turtles for all the ROS-1 versions.
 </p>
-<!-- ![ROS Turtles](../../assets/ros/turtles.png "ROS Turtles")   -->
+<!-- ![ROS Turtles]({{ site.baseurl }}/assets/ros/turtles.png "ROS Turtles")   -->
 
 ### Versions and Operating Systems
 There are two main versions of ROS; ROS 1 and ROS 2.
@@ -57,10 +57,10 @@ Throughout this document when we use ROS, we refer to ROS 1.
 The latest long term stable distribution of ROS 1 for Ubuntu 18.04 at the time of this document is [ROS Melodic Morenia](http://wiki.ros.org/melodic).
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/melodic.jpg" style="width: 30%;">
+    <img src="{{ site.baseurl }}/assets/ros/melodic.jpg" style="width: 20%;">
     Figure 3 - The poster of ROS Melodic Morenia.  
 </p>
-<!-- ![Figure 3 - The logo of ROS Melodic Morenia](../../assets/ros/melodic.jpg "Figure 3 - The logo of ROS Melodic Morenia") -->
+<!-- ![Figure 3 - The logo of ROS Melodic Morenia]({{ site.baseurl }}/assets/ros/melodic.jpg "Figure 3 - The logo of ROS Melodic Morenia") -->
 
 While it is possible to install ROS in Linux, MacOS and Windows, it is easiest to install in Linux.
 We shall assume that the operating system of the user is Linux (more specifically Ubuntu 18.04).
@@ -102,7 +102,7 @@ This is referred to as the top-level cmake file and is a symbolic link to the fi
 ### 3.1.1 The workspace structure
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/workspace.png" width=40%>
+    <img src="{{ site.baseurl }}/assets/ros/workspace.png" style="width: 40%;">
     Figure 4. A Typical ROS workspace.
 </p>
 
@@ -161,7 +161,7 @@ Each package is a separate folder in the **src** folder and must contain 2 files
 
 For example, for a package named *my_package* that depends on *roscpp*, a simple configuration can be as follows.
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/CMakeLists.txt.png" width=60%>
+    <img src="{{ site.baseurl }}/assets/ros/CMakeLists.txt.png" style="width: 60%;">
     Figure 5 - CMakeLists.txt for a package named *my_package* dependant on *roscpp*. The executable is called *my_package_node*.
 </p>
 <!-- ![CMakeLists.txt](../../assets/ros/CMakeLists.txt.png "CMakeLists.txt")   -->
@@ -169,7 +169,7 @@ For example, for a package named *my_package* that depends on *roscpp*, a simple
 <br/><br/>
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/package.xml.png" width=60%>
+    <img src="{{ site.baseurl }}/assets/ros/package.xml.png" style="width: 60%;">
     Figure 6 - package.xml for a package named *my_package* dependant on *roscpp*.
 </p>
 <!-- ![package.xml](../../assets/ros/package.xml.png "package.xml") -->
