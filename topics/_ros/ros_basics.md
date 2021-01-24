@@ -181,7 +181,7 @@ add_executable(${PACKAGE_NAME}_node src/a_packagge_node.cpp)
 target_link_libraries(${PACKAGE_NAME}_node ${catkin_LIBRARIES})
 ```
 
-Package.xml
+package.xml
 ```xml
 <?xml version="1.0"?>
 <package format=2.0>
