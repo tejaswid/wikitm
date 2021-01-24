@@ -14,7 +14,6 @@ permalink: /topics/
     {% endif %}
   
     {% comment %} Link to the hompage of the topic {% endcomment %}
-    <!-- <a href={{ site.baseurl | append:"/" | append:coll.label | append:"/" }}>{{ coll.menu_heading }}</a> -->
     [{{ coll.menu_heading }}]({{ site.baseurl | append:"/" | append:coll.label | append:"/" }})
     {% for file in site[coll.label] %}
         {% if file.name contains "index" %}
