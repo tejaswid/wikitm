@@ -161,6 +161,7 @@ Each package is a separate folder in the **src** folder and must contain 2 files
 
 For example, for a package named *a_package* that depends on *roscpp*, a simple configuration can be as follows.
 
+CMakeLists.txt
 ```cmake
 cmake_minimum_required(VERSION 2.8.3)
 project(a_package)
@@ -180,6 +181,7 @@ add_executable(${PACKAGE_NAME}_node src/a_packagge_node.cpp)
 target_link_libraries(${PACKAGE_NAME}_node ${catkin_LIBRARIES})
 ```
 
+Package.xml
 ```xml
 <?xml version="1.0"?>
 <package format=2.0>
