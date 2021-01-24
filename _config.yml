@@ -48,8 +48,13 @@ github:
   repo: https://github.com/tejaswid/wikitm
 
 collections:
-  linuxwalkthroughs:
-    menu_heading: "Linux Walkthroughs"
+  # linuxwalkthroughs:
+  #   menu_heading: "Linux Walkthroughs"
+  #   sequence: 1
+  #   output: true
+  #   permalink: /:collection/:name
+  ros:
+    menu_heading: "ROS"
     sequence: 1
     output: true
     permalink: /:collection/:name
