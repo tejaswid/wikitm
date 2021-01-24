@@ -25,8 +25,10 @@ Table 1 - Summary of some key components in ROS (\[[3](https://www.researchgate.
 | | Data Logging | Mapping | Tutorials |
 | | Hardware Abstraction | Manipulation | Forums | 
 
-![Components of ROS](../../assets/ros/ros_contents.png "Components of ROS")  
-Figure 1 - The ROS equation illustrating the components of ROS (\[[1](https://www.ros.org/about-ros/))\].
+<p align="center">
+    <img src="{{ site.baseurl }}/assets/ros/ros_contents.png">
+    Figure 1 - The ROS equation illustrating the components of ROS (\[[1](https://www.ros.org/about-ros/))\].
+</p>
 
 ### Why use ROS?
 1. ROS is **modular**, meaning one can choose to use only specific components of ROS in their frameworks.  
@@ -55,7 +57,7 @@ Throughout this document when we use ROS, we refer to ROS 1.
 The latest long term stable distribution of ROS 1 for Ubuntu 18.04 at the time of this document is [ROS Melodic Morenia](http://wiki.ros.org/melodic).
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/melodic.jpg" width=30%>
+    <img src="{{ site.baseurl }}/assets/ros/melodic.jpg">
     Figure 3 - The poster of ROS Melodic Morenia.  
 </p>
 <!-- ![Figure 3 - The logo of ROS Melodic Morenia](../../assets/ros/melodic.jpg "Figure 3 - The logo of ROS Melodic Morenia") -->
