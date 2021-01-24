@@ -7,3 +7,4 @@ _pdf
 *.idea
 *.sublime-project
 *.sublime-workspace
+Gemfile.lock
