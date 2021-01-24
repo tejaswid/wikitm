@@ -13,7 +13,7 @@ Wherever possible, links to technical content and implementation details are pro
 ### What is ROS?
 ROS is a framework for writing software for robots. 
 Even though the name contains the term *Operating System*, it is not a complete operating system.
-It is rather a collection of software tools and libraries that enables programming complex robot behaviours across a wide variety of robot platforms. (see \[[1](https://www.ros.org/about-ros/)\], \[[2](http://wiki.ros.org/)\]) The tools that ROS offers can be categorized as shown in Table 1 and illustrated in Figure 1.
+It is rather a collection of software tools and libraries that enables programming complex robot behaviours across a wide variety of robot platforms. (see \[[1](https://www.ros.org/about-ros/)\], \[[2](http://wiki.ros.org/)\]) The tools that ROS offers can be categorized as shown in Table 1 and illustrated in Figure 1 (from (\[[1](https://www.ros.org/about-ros/))\]).
 
 Table 1 - Summary of some key components in ROS (\[[3](https://www.researchgate.net/publication/314101187_Programming_for_Robotics_-_Introduction_to_ROS)\]).
 
@@ -27,7 +27,7 @@ Table 1 - Summary of some key components in ROS (\[[3](https://www.researchgate.
 
 <p align="center">
     <img src="{{ site.baseurl }}/assets/ros/ros_contents.png">
-    Figure 1 - The ROS equation illustrating the components of ROS (\[[1](https://www.ros.org/about-ros/))\].
+    Figure 1 - The ROS equation illustrating the components of ROS.
 </p>
 
 ### Why use ROS?
@@ -102,7 +102,7 @@ This is referred to as the top-level cmake file and is a symbolic link to the fi
 ### 3.1.1 The workspace structure
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/workspace.png" style="width: 40%;">
+    <img src="{{ site.baseurl }}/assets/ros/workspace.png" style="width: 25%;">
     Figure 4. A Typical ROS workspace.
 </p>
 
@@ -159,22 +159,54 @@ Each package is a separate folder in the **src** folder and must contain 2 files
 1. **CMakeLists.txt** - Containing the configuration for catkin to build the package.  
 2. **package.xml** - Containing information about the package such as its name, version, description, author, maintainer and all the dependencies of this package. This file is only to let users other than the author/maintainer to know what this package is about and what the requirements are to build the package. Ideally all the dependencies mentioned in CMakeLists.txt should be mentioned in this file as well.
 
-For example, for a package named *my_package* that depends on *roscpp*, a simple configuration can be as follows.
-<p align="center">
+For example, for a package named *a_package* that depends on *roscpp*, a simple configuration can be as follows.
+
+```cmake
+cmake_minimum_required(VERSION 2.8.3)
+project(a_package)
+
+add_compile_options(-std=c++11)
+
+find_package(catkin REQUIRED COMPONENTS roscpp)
+
+catkin_package()
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+## Declare a C++ executable
+add_executable(${PACKAGE_NAME}_node src/a_packagge_node.cpp)
+
+## Specify libraries to link a library or executable target against
+target_link_libraries(${PACKAGE_NAME}_node ${catkin_LIBRARIES})
+```
+
+```xml
+<?xml version="1.0"?>
+<package format=2.0>
+    <name>a_package</name>
+    <version>1.2.3</version>
+    <description>This package does something.</description>
+
+    <maintainer email="maintainer@email.com">Maintainer Name</maintainer>
+    <license>BSD</license>
+    
+    <depend>roscpp</depend>
+    <buildtool_depend>catkin</buildtool_depend>
+</package>
+```
+
+<!-- <p align="center">
     <img src="{{ site.baseurl }}/assets/ros/CMakeLists.txt.png" style="width: 60%;">
     Figure 5 - CMakeLists.txt for a package named *my_package* dependant on *roscpp*. The executable is called *my_package_node*.
-</p>
+</p> -->
 <!-- ![CMakeLists.txt](../../assets/ros/CMakeLists.txt.png "CMakeLists.txt")   -->
 
-<br/><br/>
-
+<!-- 
 <p align="center">
     <img src="{{ site.baseurl }}/assets/ros/package.xml.png" style="width: 60%;">
     Figure 6 - package.xml for a package named *my_package* dependant on *roscpp*.
-</p>
+</p> -->
 <!-- ![package.xml](../../assets/ros/package.xml.png "package.xml") -->
-
-<br/><br/>
 
 All other code can be organized into folders as necessay. The following is a common convention for some general code.  
 1. **src** - Containing all the C++ source files  
