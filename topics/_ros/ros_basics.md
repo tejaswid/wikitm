@@ -57,7 +57,7 @@ Throughout this document when we use ROS, we refer to ROS 1.
 The latest long term stable distribution of ROS 1 for Ubuntu 18.04 at the time of this document is [ROS Melodic Morenia](http://wiki.ros.org/melodic).
 
 <p align="center">
-    <img src="{{ site.baseurl }}/assets/ros/melodic.jpg">
+    <img src="{{ site.baseurl }}/assets/ros/melodic.jpg" width=30vw>
     Figure 3 - The poster of ROS Melodic Morenia.  
 </p>
 <!-- ![Figure 3 - The logo of ROS Melodic Morenia](../../assets/ros/melodic.jpg "Figure 3 - The logo of ROS Melodic Morenia") -->
