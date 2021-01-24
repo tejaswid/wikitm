@@ -42,7 +42,7 @@ The first official release of ROS was ROS Box Turtle which was released on 2nd M
 Since 2013 the Open Source Robotics Foundation has been managing and maintaining ROS.
 
 <p align="center">
-    <img src="../../assets/ros/turtles.png"></br>
+    <img src="{{ site.baseurl }}/assets/ros/turtles.png"></br>
     Figure 2 - Turtles for all the ROS-1 versions.
 </p>
 <!-- ![ROS Turtles](../../assets/ros/turtles.png "ROS Turtles")   -->
@@ -262,4 +262,4 @@ Gazebo is not part of ROS, however it is closely associated with it.
 This is a tool for keep track of rigid body transformations.
 Coordinate frames of all the objects in the environment are stores in a tree like structured and updated in time.
 Tools to convert between several representations of transformations are also available.
-These can also be visualized in RViz
+These can also be visualized in RViz.
