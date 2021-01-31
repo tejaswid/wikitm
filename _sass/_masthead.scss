@@ -10,11 +10,11 @@
   // width: 100%;
   overflow: hidden;
   background-color: white;
-  height: 6rem;
+  height: 4rem;
   // adjust height for very small screens since the tagline will take another line
   @media (max-width: $width-very-small-screen)
   {
-    height: 7rem;
+    height: 5rem;
   }
   // background-color: red;
 }
