@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Broadcasting internet
+title: Combine PDFs using ghostscript
 ---
 # Combining PDF files using ghostscript
 Task: You want to combine multiple pdf files into one single pdf file. You dont want to upload it to a shady website.  
