@@ -1,23 +1,52 @@
+/* general rules */
 .pane {
-    display: inline-block;
-    flex: 0 1 auto;
-    text-align: center;
-    width: 12.5rem;
-    max-width: 12.5rem;
-    width: calc(25vw);
-    height: calc(12.5 + 6em);
-    margin: 0.625rem;
-    vertical-align: top;
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 0.5rem -0.4rem hsla(240, 20%, 20%, 0.5);
-    overflow: hidden;
+    clear: both;
+    font-family: var(--sans-serif);
+}
+.pane:hover {
+    box-shadow: 0 10px 10px -8px hsla(240, 20%, 20%, 0.5);
+}
+.pane a { font-weight: bold; }
+.pane img {
+    width: 6.25rem;
+    margin: 0 1.25rem;
+    float: left;
+}
+.pane .blurb {
+    display: block;
+    font-size: 60%;
+    line-height: 1.1;
 }
 
-section .facade {
-    width: auto;
-    max-width: 53.125rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+/* for large screens */
+@media only screen and (min-width: 27.5em) {
+
+    section .facade {
+        width: auto;
+        max-width: 53.125rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .pane {
+        display: inline-block;
+        flex: 0 1 auto;
+        text-align: center;
+        width: 12.5rem;
+        max-width: 12.5rem;
+        width: calc(25vw);
+        height: calc(12.5 + 6em);
+        margin: 0.625rem;
+        vertical-align: top;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 0.5rem -0.4rem hsla(240, 20%, 20%, 0.5);
+        overflow: hidden;
+    }
+    .pane img {
+        float: none;
+        width: 12.5rem;
+        margin: 0;
+        display: block;
+
 }
