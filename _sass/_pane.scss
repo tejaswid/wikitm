@@ -13,3 +13,11 @@
     box-shadow: 0 0.5rem 0.5rem -0.4rem hsla(240, 20%, 20%, 0.5);
     overflow: hidden;
 }
+
+section .facade {
+    width: auto;
+    max-width: 53.125rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
