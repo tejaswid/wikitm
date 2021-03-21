@@ -12,8 +12,9 @@ title: Grid
         {% endif %}
 
         {% comment %} Link to the hompage of the topic {% endcomment %}
+        {% assign topic_homepage = {{ site.baseurl | append:"/" | append:coll.label | append:"/" }} %}
         <div>
-            <h1>[{{ coll.menu_heading }}]({{ site.baseurl | append:"/" | append:coll.label | append:"/" }})</h1>
+            <a href="{{ topic_homepage }}"><h1>{{ coll.menu_heading }}</h1></a>
         </div>
         <div class="facade">
             {% for file in site[coll.label] %}
@@ -21,9 +22,9 @@ title: Grid
                     {% continue %}
                 {% endif %}    
                 <div class="pane">
-                    <a href="">
+                    <a href="{{ site.baseurl|append:file.url }}">
                         <img src="{{ site.baseurl }}/assets/200x200.png" alt="">
-                        - [{{ file.title | capitalize }}]({{site.baseurl|append:file.url}})
+                        {{ file.title | capitalize }}
                     </a>
                     <span class="blurb">
                         Blurb
