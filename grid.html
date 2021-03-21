@@ -2,43 +2,34 @@
 layout: default
 title: Grid
 ---
+<section style="position:relative"></section>
+    {% assign ordered_collections = site.collections | sort: 'sequence' %}
+    {% for coll in ordered_collections %}
+        
+        {% comment %} Skip Posts {% endcomment %}
+        {% if coll.label == "posts" %} 
+            {% continue %} 
+        {% endif %}
 
-<header> 
-    <h1>Header</h1>
-</header>
-<main>
-    <section style="position:relative">
+        {% comment %} Link to the hompage of the topic {% endcomment %}
         <div>
-            some text
+            <h1>[{{ coll.menu_heading }}]({{ site.baseurl | append:"/" | append:coll.label | append:"/" }})</h1>
         </div>
         <div class="facade">
-            <div class="pane">
-                <a href="">
-                    <img src="{{ site.baseurl }}/assets/200x200.png" alt="">
-                    Article title
-                </a>
-                <span class="blurb">
-                    Blurb
-                </span>
-            </div>
-            <div class="pane">
-                <a href="">
-                    <img src="{{ site.baseurl }}/assets/200x200.png" alt="">
-                    Article title
-                </a>
-                <span class="blurb">
-                    Blurb
-                </span>
-            </div>
-            <div class="pane">
-                <a href="">
-                    <img src="{{ site.baseurl }}/assets/200x200.png" alt="">
-                    Article title
-                </a>
-                <span class="blurb">
-                    Blurb
-                </span>
-            </div>
+            {% for file in site[coll.label] %}
+                {% if file.name contains "index" %}
+                    {% continue %}
+                {% endif %}    
+                <div class="pane">
+                    <a href="">
+                        <img src="{{ site.baseurl }}/assets/200x200.png" alt="">
+                        - [{{ file.title | capitalize }}]({{site.baseurl|append:file.url}})
+                    </a>
+                    <span class="blurb">
+                        Blurb
+                    </span>
+                </div>
+            {% endfor %}
         </div>
-    </section>
-</main>
+    {% endfor %}
+</section>
