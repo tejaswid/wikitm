@@ -13,5 +13,5 @@ Hope you find it useful.
 [Krishna Manaswi Digumarti](https://krishnamanaswid.github.io)  
 [Sundara Tejaswi Digumarti](https://tejaswid.github.io)
 
-We are both post-doctoral researchers in robotics.   
+We are both researchers in robotics.   
 Feel free to checkout our individual webpages to know more about what we do.
