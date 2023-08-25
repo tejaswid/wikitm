@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Broadcasting internet
+thumbnail: <img src="{{ site.baseurl }}/assets/200x200.png">
 ---
 # Broadcasting internet from your Windows computer
 
