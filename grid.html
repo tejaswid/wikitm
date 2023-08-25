@@ -14,6 +14,7 @@ title: Grid
         {% comment %} Link to the hompage of the topic {% endcomment %}
         {% assign topic_homepage = {{ site.baseurl | append:"/" | append:coll.label | append:"/" }} %}
         <div>
+            <p>{{site.baseurl}}</p>
             <a href="{{ topic_homepage }}"><h1>{{ coll.menu_heading }}</h1></a>
         </div>
         <div class="facade">
