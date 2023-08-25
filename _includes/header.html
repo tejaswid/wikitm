@@ -4,6 +4,7 @@
     <ul>
       <!-- Webpage title -->
       <li>
+        <!-- clicking this will take the user to the home page -->
         <a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
         <!-- Add a line break if the screen is small -->
         <span class="small-screen"></span>
@@ -11,26 +12,15 @@
         <small>{{ site.tagline }}</small>
       </li>
 
+      <!-- Topics in list view -->
+      <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/topics/">Topics</a></li>
 
-      <!-- Home button -->
-      <!--
-      <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a></li>
-      -->
-      
-      <!-- About button -->
-      <!--
-      <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/about/">About</a></li>
-      -->
-
-      <!-- Topics home -->
-      <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/topics/">Home</a></li>
-
-      <!-- Topics home in grid view -->
+      <!-- Topics in grid view -->
       <li><a class="topnav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/grid/">Grid</a></li>
 
       <!-- Topics dropdown - loaded from topics_list in _config.yml-->
       <div class="topnav-dropdown">
-        <button class="dropbtn" onclick="toggleDropdown()">Topics</button>
+        <button class="dropbtn" onclick="toggleDropdown()">Dropdown</button>
         <div class="dropdown-content" id="topics_content">
           {% assign ordered_collections = site.collections | sort: 'sequence' %}
           {% for coll in ordered_collections %}

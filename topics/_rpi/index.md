@@ -7,16 +7,16 @@ name: index
 ## Contents
 
 {% for coll in site.collections %}
-{% if page.url contains coll.label %}
+	{% if page.url contains coll.label %}
 
-{% for file in site[coll.label] %}
-{% if file.name contains "index" %}
-	{% continue %}
-{% endif %}
+		{% for file in site[coll.label] %}
+			{% if file.name contains "index" %}
+				{% continue %}
+			{% endif %}
 
-- [{{ file.title | capitalize }}]({{site.baseurl|append:file.url}})
+			- [{{ file.title | capitalize }}]({{site.baseurl|append:file.url}})
 
-{% endfor %}
+		{% endfor %}
 
-{% endif %}
+	{% endif %}
 {% endfor %}
