@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Broadcasting internet
+title: B internet
 thumbnail: {{ site.baseurl | append:"/assets/200x200.png"}}
 ---
 # Broadcasting internet from your Windows computer
