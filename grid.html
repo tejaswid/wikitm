@@ -23,7 +23,7 @@ title: Grid
                 <div class="pane">
                     <a href="{{ site.baseurl|append:file.url }}">
                         {% if file.thumbnail %}
-                        <p>file.thumbnail</p>
+                        <p>{{ file.thumbnail }}</p>
                         <img src='{{ file.thumbnail }}'>
                         {% endif %}
                         {{ file.title | capitalize }}
