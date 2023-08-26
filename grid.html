@@ -24,6 +24,8 @@ title: Grid
                     <a href="{{ site.baseurl|append:file.url }}">
                         {% if file.thumbnail %}
                         <img src= {{ site.baseurl | append:file.thumbnail }}>
+                        {% else %}
+                        <img src= {{ site.baseurl | append:'/assets/thumbnails/200x200.png' }}>
                         {% endif %}
                         {{ file.title | capitalize }}
                     </a>
