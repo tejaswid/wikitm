@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Broadcasting internet
-thumbnail:  https://tejaswid.github.io/wikitm/assets/200x200.png
+thumbnail:  {{site.baseurl| append: 'assets/200x200.png'}}
 ---
 # Broadcasting internet from your Windows computer
 
