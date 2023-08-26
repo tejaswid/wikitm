@@ -25,7 +25,7 @@ title: Grid
                         {% if file.thumbnail %}
                         {% assign monkey=file.thumbnail %}
                         <p>{{ monkey }}</p>
-                        <img src= {{ file.thumbnail }}>
+                        <img src= {{ site.baseurl | append:file.thumbnail }}>
                         {% endif %}
                         {{ file.title | capitalize }}
                     </a>
