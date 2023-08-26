@@ -27,9 +27,11 @@ title: Grid
                         {% endif %}
                         {{ file.title | capitalize }}
                     </a>
+                    {% if file.blurb %}
                     <span class="blurb">
-                        Blurb
+                        file.blurb
                     </span>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
