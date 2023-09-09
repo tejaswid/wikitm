@@ -29,11 +29,11 @@ title: Grid
                         {% endif %}
                         <div class="card-textbox">
                             <div class="card-title">
-                                <a href="{{ site.baseurl|append:file.url }}">
-                                    {{ file.title | capitalize }}
-                                </a>
+                                <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
                             </div>
-                            <!--<div class="card-subtitle">This explains the card in more detail</div> -->
+                            {% if file.date %}
+                            <div class="card-date">{{ file.date }}</div>
+                            {% endif %}
                             <div class="card-bar"></div>
                             {% if file.blurb %}
                             <div class="card-description">
@@ -41,8 +41,7 @@ title: Grid
                             </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                <span class="card-tag">HTML</span>
-                                <span class="card-tag">CSS</span>
+                                <span class="card-tag">{{ coll.menu_heading }}</span>
                             </div>
                         </div>
                     </div>
