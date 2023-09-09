@@ -23,24 +23,25 @@ title: Grid
                 <div class="card card-white">
                     <div class="card-innerbox">
                         {% if file.thumbnail %}
-                        <img class="card-img" src= {{ site.baseurl | append:file.thumbnail }}>
+                            <img class="card-img" src= {{ site.baseurl | append:file.thumbnail }}>
                         {% else %}
-                        <img class="card-img" src= {{ site.baseurl | append:'/assets/200x200.png' }}>
+                            <img class="card-img" src= {{ site.baseurl | append:'/assets/200x200.png' }}>
                         {% endif %}
                         <div class="card-textbox">
                             <div class="card-title">
                                 <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
                             </div>
                             {% if file.date_published %}
-                            <div class="card-date">{{ file.date_published }}</div>
+                                <div class="card-date">{{ file.date_published }}</div>
                             {% endif %}
                             <div class="card-bar"></div>
                             {% if file.blurb %}
-                            <div class="card-description">
-                                {{ file.blurb }}
-                            </div>
+                                <div class="card-description">
+                                    {{ file.blurb }}
+                                </div>
                             {% endif %}
                             <div class="card-tagbox">
+                                {% assign smoothie_flavors = file.tags | split: ", " %}
                                 {% for tag in file.tags $}
                                     <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:tag | append:"/" }}'>{{ tag }}</a></span>
                                 {% endfor %}
