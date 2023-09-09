@@ -31,8 +31,8 @@ title: Grid
                             <div class="card-title">
                                 <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
                             </div>
-                            {% if file.date %}
-                            <div class="card-date">{{ file.date }}</div>
+                            {% if file.date_published %}
+                            <div class="card-date">{{ file.date_published }}</div>
                             {% endif %}
                             <div class="card-bar"></div>
                             {% if file.blurb %}
