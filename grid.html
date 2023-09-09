@@ -41,7 +41,9 @@ title: Grid
                             </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
+                                {% for tag in file.tags $}
+                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:tag | append:"/" }}'>{{ tag }}</a></span>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
