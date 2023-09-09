@@ -15,25 +15,37 @@ title: Grid
         <div>
             <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
         </div>
-        <div class="facade">
+        <div class="card-container">
             {% for file in site[coll.label] %}
                 {% if file.name contains "index" %}
                     {% continue %}
                 {% endif %}    
-                <div class="pane">
-                    <a href="{{ site.baseurl|append:file.url }}">
+                <div class="card card-blue">
+                    <div class="card-innerbox">
                         {% if file.thumbnail %}
-                        <img src= {{ site.baseurl | append:file.thumbnail }}>
+                        <img class="card-img" src= {{ site.baseurl | append:file.thumbnail }}>
                         {% else %}
-                        <img src= {{ site.baseurl | append:'/assets/200x200.png' }}>
+                        <img class="card-img" src= {{ site.baseurl | append:'/assets/200x200.png' }}>
                         {% endif %}
-                        {{ file.title | capitalize }}
-                    </a>
-                    {% if file.blurb %}
-                    <span class="blurb">
-                        {{ file.blurb }}
-                    </span>
-                    {% endif %}
+                        <div class="card-textbox">
+                            <div class="card-title">
+                                <a href="{{ site.baseurl|append:file.url }}">
+                                    {{ file.title | capitalize }}
+                                </a>
+                            </div>
+                            <!--<div class="card-subtitle">This explains the card in more detail</div> -->
+                            <div class="card-bar"></div>
+                            {% if file.blurb %}
+                            <div class="card-description">
+                                {{ file.blurb }}
+                            </div>
+                            {% endif %}
+                            <div class="card-tagbox">
+                                <span class="card-tag">HTML</span>
+                                <span class="card-tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>

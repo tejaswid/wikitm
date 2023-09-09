@@ -1,0 +1,185 @@
+/* a card like appearance - based on https://codepen.io/rabakilgur/pen/RYpVQz */
+
+/* general rules: */
+.card-container,
+.card-container * {
+	box-sizing: border-box;
+}
+.card-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+}
+.card {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: #fff;
+	border: 2px solid #ddd;
+	font-size: 18px;
+	overflow: hidden;
+	cursor: pointer;
+	box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+	box-shadow: 0 34px 32px -33px rgba(0, 0, 0, .18);
+	transform: translate(0px, -3px);
+}
+.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(-70deg, #424242, transparent 50%);
+	opacity: 0.07;
+}
+.card:nth-child(2n)::before {
+	background-image: linear-gradient(-250deg, #424242, transparent 50%);
+}
+.card-innerbox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.card-img {
+	position: absolute;
+	height: 300px;
+	width: 400px;
+	top: 0;
+	left: 0;
+	transition: transform 0.2s ease;
+}
+.card:nth-child(2n) .card-img {
+	left: initial;
+	right: 0;
+}
+.card:hover .card-img {
+	transform: scale(1.05) rotate(1deg);
+}
+.card:hover .card-bar {
+	width: 70px;
+}
+.card-textbox {
+	position: absolute;
+	top: 7%;
+	bottom: 7%;
+	left: 430px;
+	width: calc(100% - 470px);
+	font-size: 17px;
+}
+.card:nth-child(2n) .card-textbox {
+	left: initial;
+	right: 430px;
+}
+.card-textbox::before,
+.card-textbox::after {
+	content: "";
+	position: absolute;
+	display: block;
+	background: #ff0000bb;
+	background: #fff;
+	top: -20%;
+	left: -55px;
+	height: 140%;
+	width: 60px;
+	transform: rotate(8deg);
+}
+.card:nth-child(2n) .card-textbox::before {
+	display: none;
+}
+.card-textbox::after {
+	display: none;
+	left: initial;
+	right: -55px;
+}
+.card:nth-child(2n) .card-textbox::after {
+	display: block;
+}
+.card-textbox * {
+	position: relative;
+}
+.card-title {
+	font-family: 'Voces', 'Open Sans', arial, sans-serif;
+	font-size: 24px;
+}
+.card-subtitle {
+	font-family: 'Voces', 'Open Sans', arial, sans-serif;
+	color: #888;
+}
+.card-bar {
+	left: -2px;
+	width: 50px;
+	height: 5px;
+	margin: 10px 0;
+	border-radius: 5px;
+	background-color: #424242;
+	transition: width 0.2s ease;
+}
+.card-blue .card-bar { background-color: #0088FF; }
+.card-blue::before { background-image: linear-gradient(-70deg, #0088FF, transparent 50%); }
+.card-blue:nth-child(2n)::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
+
+.card-grey .card-bar { background-color: #424242; }
+.card-grey::before { background-image: linear-gradient(-70deg, #424242, transparent 50%); }
+.card-grey:nth-child(2n)::before { background-image: linear-gradient(-250deg, #424242, transparent 50%); }
+
+.card-customcolor .card-bar { background-color: var(--card-color); }
+.card-customcolor::before { background-image: linear-gradient(-70deg, var(--card-color), transparent 50%); }
+.card-customcolor:nth-child(2n)::before { background-image: linear-gradient(-250deg, var(--card-color), transparent 50%); }
+
+.card-description {
+	z-index: 10;
+	font-size: 15px;
+	color: #424242;
+	height: 125px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.card-tagbox {
+	position: absolute;
+	bottom: 3%;
+	font-size: 14px;
+	cursor: default;
+	user-select: none;
+	pointer-events: none;
+}
+.card-tag {
+	display: inline-block;
+	background: #E0E0E0;
+	color: #777;
+	border-radius: 3px 0 0 3px;
+	line-height: 26px;
+	padding: 0 10px 0 23px;
+	position: relative;
+	margin-right: 20px;
+	cursor: default;
+	user-select: none;
+	transition: color 0.2s;
+}
+.card-tag::before {
+	content: '';
+	position: absolute;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+	height: 6px;
+	left: 10px;
+	width: 6px;
+	top: 10px;
+}
+.card-tag::after {
+	content: '';
+	position: absolute;
+	border-bottom: 13px solid transparent;
+	border-left: 10px solid #E0E0E0;
+	border-top: 13px solid transparent;
+	right: -10px;
+	top: 0;
+}
