@@ -43,7 +43,7 @@ title: Grid
                             <div class="card-tagbox">
                                 {% if file.labels %}
                                     {% assign file_labels = file.labels | split: ", " %}
-                                    {% for file_label in file_label %}
+                                    {% for file_label in file_labels %}
                                         <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_label | append:"/" }}'>file_label</a></span>
                                     {% endfor %}
                                 {% else %}
