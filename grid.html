@@ -3,19 +3,20 @@ layout: default
 title: Grid
 ---
 <section style="position:relative"></section>
-    {% assign ordered_collections = site.collections | sort: 'sequence' %}
-    {% for coll in ordered_collections %}
-        
-        {% comment %} Skip Posts {% endcomment %}
-        {% if coll.label == "posts" %} 
-            {% continue %} 
-        {% endif %}
+    <div class="card-container"></div>
+        {% assign ordered_collections = site.collections | sort: 'sequence' %}
+        {% for coll in ordered_collections %}
+            
+            {% comment %} Skip Posts {% endcomment %}
+            {% if coll.label == "posts" %} 
+                {% continue %} 
+            {% endif %}
 
-        {% comment %} Link to the hompage of the topic {% endcomment %}
-        <div>
-            <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
-        </div>
-        <div class="card-container">
+            {% comment %} Link to the hompage of the topic {% endcomment %}
+            <div>
+                <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
+            </div>
+            
             {% for file in site[coll.label] %}
                 {% if file.name contains "index" %}
                     {% continue %}
@@ -41,12 +42,14 @@ title: Grid
                             </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                <span class="card-tag">{{ coll.menu_heading }}</span>
+                                <span class="card-tag">
+                                    <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-    {% endfor %}
+            {% endfor %}  
+        {% endfor %}
+    </div>
 </section>
