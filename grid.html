@@ -41,7 +41,7 @@ title: Grid
                                 </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                {% if file.tags %}
+                                {% if file.labels %}
                                     <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>test</a></span>
                                 {% else %}
                                     <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
