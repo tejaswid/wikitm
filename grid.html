@@ -42,10 +42,7 @@ title: Grid
                             {% endif %}
                             <div class="card-tagbox">
                                 {% if file.tags %}
-                                    {% assign tags = file.tags | split: ", " %}
-                                    {% for tag in tags $}
-                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:tag | append:"/" }}'>{{ tag }}</a></span>
-                                    {% endfor %}
+                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>test</a></span>
                                 {% else %}
                                     <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
                                 {% endif %}
