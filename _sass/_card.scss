@@ -78,7 +78,7 @@
 /* when hovering over the card, make the card bar (underline) longer and purple */
 .card:hover .card-bar {
 	width: 50%;
-  background-color: #2D1650;
+  background-color: $tm-purple;
 }
 
 .card:hover .card-title {
