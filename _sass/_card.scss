@@ -75,10 +75,14 @@
 	transform: scale(1.05) rotate(0deg);
 }
 
-/* when hovering over the card, make the card bar (underline) longer */
+/* when hovering over the card, make the card bar (underline) longer and purple */
 .card:hover .card-bar {
 	width: 50%;
-  background-color: #ff0000;
+  background-color: #2D1650;
+}
+
+.card:hover .card-title {
+  color: #2D1650;
 }
 
 /* textual content of the card goes in here */
@@ -126,6 +130,11 @@
 .card-title {
 	font-family: 'Voces', 'Open Sans', arial, sans-serif;
 	font-size: 24px;
+  color: #000000;
+}
+
+.card-title .a{
+  color: #000000;
 }
 
 /* the subtitle of the card - not used in our website*/
