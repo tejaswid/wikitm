@@ -41,10 +41,14 @@ title: Grid
                                 </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                {% assign smoothie_flavors = file.tags | split: ", " %}
-                                {% for tag in file.tags $}
-                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:tag | append:"/" }}'>{{ tag }}</a></span>
-                                {% endfor %}
+                                {% if file.tags %}
+                                    {% assign smoothie_flavors = file.tags | split: ", " %}
+                                    {% for tag in file.tags $}
+                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:tag | append:"/" }}'>{{ tag }}</a></span>
+                                    {% endfor %}
+                                {% else %}
+                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
