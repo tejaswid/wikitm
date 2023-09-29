@@ -3,22 +3,20 @@ layout: default
 title: Grid
 ---
 <section style="position:relative"></section>
-
-    {% comment %} site.colelctions are defined in _config.yml {% endcomment %}
     {% assign ordered_collections = site.collections | sort: 'sequence' %}
-    {% for collection in ordered_collections %}
+    {% for coll in ordered_collections %}
         
         {% comment %} Skip Posts {% endcomment %}
-        {% if collection.label == "posts" %} 
+        {% if coll.label == "posts" %} 
             {% continue %} 
         {% endif %}
 
         {% comment %} Link to the hompage of the topic {% endcomment %}
         <div>
-            <a href='{{ site.baseurl | append:"/" | append:collection.label | append:"/" }}'><h1>{{ collection.menu_heading }}</h1></a>
+            <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
         </div>
         <div class="card-container">
-            {% for file in site[collection.label] %}
+            {% for file in site[coll.label] %}
                 {% if file.name contains "index" %}
                     {% continue %}
                 {% endif %}    
@@ -43,13 +41,13 @@ title: Grid
                                 </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                {% if file.tags %}
-                                    {% assign file_categories = file.categories | split: ", " %}
-                                    {% for file_category in file_categories %}
-                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_category | append:"/" }}'>{{ file_category }}</a></span>
+                                {% if file.labels %}
+                                    {% assign file_labels = file.labels | split: ", " %}
+                                    {% for file_label in file_labels %}
+                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_label | append:"/" }}'>{{ file_label }}</a></span>
                                     {% endfor %}
                                 {% else %}
-                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:collection.label | append:"/" }}'>{{ collection.menu_heading }}</a></span>
+                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
                                 {% endif %}
                             </div>
                         </div>
