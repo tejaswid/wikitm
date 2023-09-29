@@ -3,6 +3,26 @@ layout: default
 title: Grid
 ---
 <section style="position:relative"></section>
+    <div id="archives">
+        {% for lbl in site.labels %}
+        <div class="archive-group">
+            {% capture lbl_name %}{{ lbl | first }}{% endcapture %}
+            <div id="#{{ category_name | slugize }}"></div>
+            <p></p>
+        
+            <h3 class="category-head">{{ lbl_name }}</h3>
+            <a name="{{ category_name | slugize }}"></a>
+            {% for post in site.labels[lbl_name] %}
+            <article class="archive-item">
+            <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+            </article>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+
     {% assign ordered_collections = site.collections | sort: 'sequence' %}
     {% for coll in ordered_collections %}
         
