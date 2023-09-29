@@ -3,40 +3,22 @@ layout: default
 title: Grid
 ---
 <section style="position:relative"></section>
-    <div id="archives">
-        {% for lbl in site.labels %}
-        <div class="archive-group">
-            {% capture lbl_name %}{{ lbl | first }}{% endcapture %}
-            <div id="#{{ category_name | slugize }}"></div>
-            <p></p>
-        
-            <h3 class="category-head">{{ lbl_name }}</h3>
-            <a name="{{ category_name | slugize }}"></a>
-            {% for post in site.labels[lbl_name] %}
-            <article class="archive-item">
-            <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-            </article>
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
 
-
-
+    {% comment %} site.colelctions are defined in _config.yml {% endcomment %}
     {% assign ordered_collections = site.collections | sort: 'sequence' %}
-    {% for coll in ordered_collections %}
+    {% for collection in ordered_collections %}
         
         {% comment %} Skip Posts {% endcomment %}
-        {% if coll.label == "posts" %} 
+        {% if collection.label == "posts" %} 
             {% continue %} 
         {% endif %}
 
         {% comment %} Link to the hompage of the topic {% endcomment %}
         <div>
-            <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
+            <a href='{{ site.baseurl | append:"/" | append:collection.label | append:"/" }}'><h1>{{ collection.menu_heading }}</h1></a>
         </div>
         <div class="card-container">
-            {% for file in site[coll.label] %}
+            {% for file in site[collection.label] %}
                 {% if file.name contains "index" %}
                     {% continue %}
                 {% endif %}    
@@ -61,13 +43,13 @@ title: Grid
                                 </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                {% if file.labels %}
-                                    {% assign file_labels = file.labels | split: ", " %}
-                                    {% for file_label in file_labels %}
-                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_label | append:"/" }}'>{{ file_label }}</a></span>
+                                {% if file.tags %}
+                                    {% assign file_tags = file.tags | split: ", " %}
+                                    {% for file_tag in file_tags %}
+                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_tag | append:"/" }}'>{{ file_tag }}</a></span>
                                     {% endfor %}
                                 {% else %}
-                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
+                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:collection.label | append:"/" }}'>{{ collection.menu_heading }}</a></span>
                                 {% endif %}
                             </div>
                         </div>
