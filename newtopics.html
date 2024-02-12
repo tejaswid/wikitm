@@ -4,7 +4,27 @@ title: Topics
 permalink: /newtopics/
 ---
 <section style="position:relative"></section>
-    {% assign ordered_collections = site.collections | sort: 'sequence' %}
+<div id="archives">
+    {% for category in site.labels %}
+      <div class="archive-group">
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <div id="#{{ category_name | slugize }}"></div>
+        <p></p>
+    
+        <h3 class="category-head">{{ category_name }}</h3>
+        <a name="{{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
+        <article class="archive-item">
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+        </article>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    </div>
+
+
+
+    <!-- {% assign ordered_collections = site.collections | sort: 'sequence' %}
     {% for coll in ordered_collections %}
         
         {% comment %} Skip Posts {% endcomment %}
@@ -29,31 +49,5 @@ permalink: /newtopics/
         
         {% endfor %}
 
-    {% endfor %}
+    {% endfor %} -->
 </section>
-
-
-## Contents
-
-{% assign ordered_collections = site.collections | sort: 'sequence' %}
-{% for coll in ordered_collections %}
-    
-{% comment %} Skip Posts {% endcomment %}
-{% if coll.label == "posts" %} 
-    {% continue %} 
-{% endif %}
-  
-{% comment %} Link to the hompage of the topic {% endcomment %}
-[{{ coll.menu_heading }}]({{ site.baseurl | append:"/" | append:coll.label | append:"/" }})
-    
-{% for file in site[coll.label] %}
-    
-{% if file.name contains "index" %}
-    {% continue %}
-{% endif %}
-    
-- [{{ file.title | capitalize }}]({{site.baseurl|append:file.url}})
-    
-{% endfor %}
-
-{% endfor %}
