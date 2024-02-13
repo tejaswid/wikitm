@@ -4,25 +4,20 @@ permalink: /newtopics/
 ---
 <section style="position:relative"></section>
     <div>
-        {% assign categories_list = '' | split: ''%}
         <!-- loop through all the pages in the site -->
         {% for file in site.pages %}
             <!-- if the page is from the tutorials folder, -->
             {% if file.path contains 'tutorials/' %}
-
+                <li>{{ file.title | capitalize }}</li>
+                <li>{{ file.categories }}</li>
                 {% for category in file.categories %}
                     {% capture category_name %}{{ category }}{% endcapture %}
-                    {% if categories_list contains category_name %}
-                        {% continue %}
-                    {% endif %}
-                    {% assign categories_list = categories_list | concat: category_name%}
+                    <h2>{{ category_name }}</h2>
                 {% endfor %}
             {% endif %}
+            
         {% endfor %}
 
-        {% for category in categories_list %}
-            <li> {{ category }} </li>
-        {% endfor %}
 
 
         <!-- {% for category in site.labels %}
