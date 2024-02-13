@@ -11,8 +11,8 @@ permalink: /newtopics/
                 <li>{{ file.title | capitalize }}</li>
                 <li>{{ file.categories }}</li>
                 {% for category in file.categories %}
-                    {% capture category_name %}{{ category | first }}{% endcapture %}
-                    {{ category_name }}
+                    {% capture category_name %}{{ category }}{% endcapture %}
+                    <p>{{ category_name }}</p>
                     <p>monkey</p>
                 {% endfor %}
             {% endif %}
