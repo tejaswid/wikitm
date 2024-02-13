@@ -4,11 +4,18 @@ permalink: /newtopics/
 ---
 <section style="position:relative"></section>
     <div>
+        <!-- loop through all the pages in the site -->
         {% for file in site.pages %}
+            <!-- if the page is from the tutorials folder, -->
             {% if file.path contains 'tutorials/' %}
                 <li>{{ file.title | capitalize }}</li>
             {% endif %}
             
+        {% endfor %}
+
+        <!-- loop through all the categories -->
+        {% for category in site.categories %}
+            <h2>{{ category | first }}</h2>
         {% endfor %}
 
         <!-- {% for category in site.labels %}
