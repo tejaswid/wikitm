@@ -12,8 +12,10 @@ permalink: /newtopics/
                 <li>{{ file.categories }}</li>
                 {% for category in file.categories %}
                     {% capture category_name %}{{ category }}{% endcapture %}
-                    <p>{{ category_name }}</p>
-                    <p>monkey</p>
+                    <h2>{{ category_name }}</h2>
+                    {% for f in file.categories[category_name] %}
+                        <li>{{ f.title }}</li>
+                    {% endfor %}
                 {% endfor %}
             {% endif %}
             
