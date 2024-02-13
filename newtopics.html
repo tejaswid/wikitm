@@ -9,14 +9,15 @@ permalink: /newtopics/
             <!-- if the page is from the tutorials folder, -->
             {% if file.path contains 'tutorials/' %}
                 <li>{{ file.title | capitalize }}</li>
+                {% for category in file.categories %}
+                    {% capture category_name %}{{ category | first }}{% endcapture %}
+                    {{ category_name }}
+                {% endfor %}
             {% endif %}
             
         {% endfor %}
 
-        <!-- loop through all the categories -->
-        {% for category in site.categories %}
-            <h2>{{ category | first }}</h2>
-        {% endfor %}
+
 
         <!-- {% for category in site.labels %}
         <div class="archive-group">
