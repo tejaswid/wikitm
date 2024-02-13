@@ -4,7 +4,7 @@ permalink: /newtopics/
 ---
 <section style="position:relative"></section>
     <div>
-        {% for file in tutorials %}
+        {% for file in site[tutorials] %}
             {{ file.title | capitalize }}
         {% endfor %}
 
