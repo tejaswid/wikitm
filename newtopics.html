@@ -25,7 +25,7 @@ permalink: /newtopics/
         <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
         {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
-        <!-- {% comment %}
+        <!-- {% assign all_categories = "" | split: "" %}
         {% for tutorial in site.tutorials %}
         {% assign tutorial_categories = tutorial.categories %}
         {% assign all_categories = all_categories | concat: tutorial_categories | uniq %}
