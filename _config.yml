@@ -77,5 +77,3 @@ collections:
   #   sequence: 4
   #   output: true
   #   permalink: /:collection/:name
-
-collections_dir: tutorials
