@@ -4,23 +4,11 @@ title: Articles
 permalink: /articles/
 ---
 <section style="position:relative"></section>
-    {% assign ordered_collections = site.collections | sort: 'sequence' %}
-    {% for coll in ordered_collections %}
-        
-        {% comment %} Skip Posts {% endcomment %}
-        {% if coll.label == "posts" %} 
-            {% continue %} 
-        {% endif %}
 
-        {% comment %} Link to the hompage of the topic {% endcomment %}
-        <div>
-            <!-- <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a> -->
-        </div>
-        <div class="card-container">
-            {% for file in site[coll.label] %}
-                {% if file.name contains "index" %}
-                    {% continue %}
-                {% endif %}    
+    <div>
+        <!-- Loop through all the files in the articles folder -->
+        {% for file in site.articles %}
+            <div class="card-container">
                 <div class="card card-white">
                     <div class="card-innerbox">
                         {% if file.thumbnail %}
@@ -54,7 +42,8 @@ permalink: /articles/
                         </div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-    {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
 </section>
