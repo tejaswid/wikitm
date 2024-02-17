@@ -34,7 +34,7 @@ permalink: /articles/
         {% endfor %} -->
 
         {% for category in all_categories %}
-        <h3 text-align: center>{{ category }}</h3>
+        <h3 style="text-align: center">{{ category }}</h3>
         <ul>
             {% for file in site.articles %}
                 {% if file.categories contains category %}
