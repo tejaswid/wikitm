@@ -34,9 +34,9 @@ permalink: /newtopics/
         {% for category in all_categories %}
         <h3>{{ category }}</h3>
         <ul>
-            {% for tutorial in site.articles %}
-                {% if tutorial.categories contains category %}
-                <a href="{{ site.baseurl|append:tutorial.url }}">{{ tutorial.title | capitalize }}</a>
+            {% for file in site.articles %}
+                {% if file.categories contains category %}
+                <a href="{{ site.baseurl|append:tutorial.url }}">{{ file.title | capitalize }}</a>
                 {% endif %}
             {% endfor %}
         </ul>
