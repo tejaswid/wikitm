@@ -4,26 +4,23 @@ permalink: /newtopics/
 ---
 <section style="position:relative"></section>
     <div>
-        <!-- loop through all the pages in the site -->
-        <!-- {% for file in site.pages %} -->
-            <!-- if the page is from the tutorials folder, -->
-            <!-- {% if file.path contains 'tutorials/' %}
-                <li>{{ file.title | capitalize }}</li>
-                <li>{{ file.categories }}</li>
-                {% for category in file.categories %}
-                    {% capture category_name %}{{ category }}{% endcapture %}
-                    <h2>{{ category_name }}</h2>
-                {% endfor %}
-            {% endif %}
-            
-        {% endfor %} -->
-
-
         <!-- loop through all the pages in the tutorials folder -->
-        {{site.tutorials}}
         {% for file in site.tutorials %}
-            <li>{{ file.title | capitalize }}</li>
-            <li>{{ file.categories }}</li>
+            <!-- <li>{{ file.title | capitalize }}</li>
+            <li>{{ file.categories }}</li> -->
+
+            {% for category in file.categories %}
+                {% capture category_name %}{{ category | first }}{% endcapture %}
+                <div id="#{{ category_name | slugize }}"></div>
+                <p></p>
+
+                <h3 class="category-head">{{ category_name }}</h3>
+                <a name="{{ category_name | slugize }}"></a>
+                <article class="archive-item">
+                <h4><a href="{{ site.baseurl }}{{ file.url }}">{{file.title}}</a></h4>
+                </article>
+
+            {% endfor %}
         {% endfor %}
 
         <!-- {% for category in site.labels %}
