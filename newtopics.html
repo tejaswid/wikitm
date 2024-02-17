@@ -32,11 +32,11 @@ permalink: /newtopics/
         {% endfor %} -->
 
         {% for category in all_categories %}
-        <h2>{{ category }}</h2>
+        <h3>{{ category }}</h3>
         <ul>
             {% for tutorial in site.tutorials %}
                 {% if tutorial.categories contains category %}
-                    <li>{{ tutorial.title }}</li>
+                <a href="{{ site.baseurl|append:tutorial.url }}">{{ tutorial.title | capitalize }}</a>
                 {% endif %}
             {% endfor %}
         </ul>
