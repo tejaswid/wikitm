@@ -26,18 +26,23 @@ permalink: /newtopics/
         {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
 
-        {% for cat in all_categories %}
-            <h2> {{ cat }} </h2>
-            {% for file in site.tutorials %}
-                {% for category in file.categories %}
-                    {{ assign c = category }}
-                    {% if c == cat %}
-                        {{ file.title }}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-        {% endfor %}
+`
+        <!-- {% assign all_categories = "" | split: "" %}
+        {% for tutorial in site.tutorials %}
+        {% assign tutorial_categories = tutorial.categories %}
+        {% assign all_categories = all_categories | concat: tutorial_categories | uniq %}
+        {% endfor %} -->
 
+        {% for category in all_categories %}
+        <h2>{{ category }}</h2>
+        <ul>
+            {% for tutorial in site.tutorials %}
+                {% if tutorial.categories contains category %}
+                    <li>{{ tutorial.title }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endfor %}
 
         <!-- {% for category in site.labels %}
         <div class="archive-group">
