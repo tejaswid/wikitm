@@ -30,7 +30,8 @@ permalink: /newtopics/
             <h2> {{ cat }} </h2>
             {% for file in site.tutorials %}
                 {% for category in file.categories %}
-                    {% if category == cat %}
+                    {{assign c = category}}
+                    {% if c == cat %}
                         {{ file.title }}
                     {% endif %}
                 {% endfor %}
