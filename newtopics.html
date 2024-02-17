@@ -22,14 +22,14 @@ permalink: /newtopics/
             {% endfor %}
         {% endfor %}
 
-        <!-- Split the array of all categories into a list of unique categories,
-            remove the first element (empty string) and
-            sort in alphabetical order -->
-        {% assign all_categories = all_categories | split: "," | uniq | shift | sort %}
+        <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
+        {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
 
 
-        <!-- why do I need a comment here? -->
+        <!-- loop over each category
+            then loop over each file in the tutorials folder
+            then loop over each of its cateogries and check for match -->
 
         {% for category in all_categories %}
         <h2>{{ category }}</h2>
