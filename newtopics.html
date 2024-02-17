@@ -19,7 +19,8 @@ permalink: /newtopics/
         {% endfor %} -->
 
 
-        loop through all the pages in the tutorials folder
+        <!-- loop through all the pages in the tutorials folder -->
+        {{site.tutorials}}
         {% for file in site.tutorials %}
             <li>{{ file.title | capitalize }}</li>
             <li>{{ file.categories }}</li>
