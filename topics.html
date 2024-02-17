@@ -40,7 +40,7 @@ permalink: /topics/
                 {% if file.categories contains category %}
                 <tr>
                     <td><a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a></td>
-                    <td>{{ file.date_published }}</td>
+                    <td style="width:200px">{{ file.date_published }}</td>
                 </tr>
                 {% endif %}
             {% endfor %}
