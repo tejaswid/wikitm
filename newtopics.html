@@ -4,10 +4,14 @@ permalink: /newtopics/
 ---
 <section style="position:relative"></section>
     <div>
+        <!-- Create an empty array to store all the categories -->
         {% assign all_categories = "" | split: ',' %}
+
+        <!-- Loop through all the files in the tutorials folder -->
         {% for file in site.tutorials %}
+            <!-- Loop through all the categories in the file -->
             {% for category in file.categories %}
-                
+                <!-- Capture the category name as a string and add it to the array of all categories -->
                 {% capture all_categories %}
                     {% if all_categories %}
                         {{ all_categories | join: "," }},{{ category }}
@@ -16,13 +20,21 @@ permalink: /newtopics/
                     {% endif %}
                 {% endcapture %}
             {% endfor %}
-
         {% endfor %}
 
+        <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
         {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
+
         {% for cat in all_categories %}
-            <li> {{ cat }} </li>
+            <h2> {{ cat }} </h2>
+            {% for file in site.tutorials %}
+                {% for category in file.categories %}
+                    {% if category == cat %}
+                        <a href="{{ site.baseurl | append:file.url }}">{{ file.title }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         {% endfor %}
 
 
