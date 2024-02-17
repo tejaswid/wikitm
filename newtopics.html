@@ -22,9 +22,12 @@ permalink: /newtopics/
             {% endfor %}
         {% endfor %}
 
-        <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
-        {% assign all_categories = all_categories | split: "," | uniq | shift %}
+        <!-- Split the array of all categories into a list of unique categories, 
+            remove the first element (empty string) and 
+            sort in alphabetical order -->
+        {% assign all_categories = all_categories | split: "," | uniq | shift | sort %}\
 
+        <h1>List of topics </h1>
         <!-- Loop through all the unique categories -->
         {% for category in all_categories %}
         <h2>{{ category }}</h2>
