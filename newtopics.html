@@ -4,9 +4,12 @@ permalink: /newtopics/
 ---
 <section style="position:relative"></section>
     <div>
+
+        foo
+
         {% assign all_categories = "" | split: ',' %}
         {% for file in site.tutorials %}
-
+            {{ file.title }}
             {% for category in file.categories %}
                 {% capture all_categories %}
                     {% if all_categories %}
