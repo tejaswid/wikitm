@@ -25,17 +25,11 @@ permalink: /newtopics/
         <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
         {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
-
-`
-        <!-- {% assign all_categories = "" | split: "" %}
-        {% for tutorial in site.tutorials %}
-        {% assign tutorial_categories = tutorial.categories %}
-        {% assign all_categories = all_categories | concat: tutorial_categories | uniq %}
-        {% endfor %} -->
-
+        <!-- Loop through all the unique categories -->
         {% for category in all_categories %}
         <h2>{{ category }}</h2>
         <ul>
+            <!-- Loop through all the files in the tutorials folder and display the title of the file if it contains the current category -->
             {% for tutorial in site.tutorials %}
                 {% if tutorial.categories contains category %}
                     <li>{{ tutorial.title }}</li>
@@ -44,49 +38,5 @@ permalink: /newtopics/
         </ul>
         {% endfor %}
 
-        <!-- {% for category in site.labels %}
-        <div class="archive-group">
-            {% capture category_name %}{{ category | first }}{% endcapture %}
-            <div id="#{{ category_name | slugize }}"></div>
-            <p></p>
-        
-            <h3 class="category-head">{{ category_name }}</h3>
-            <a name="{{ category_name | slugize }}"></a>
-            {% for post in site.categories[category_name] %}
-            <article class="archive-item">
-            <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-            </article>
-            {% endfor %}
-        </div>
-        {% endfor %} -->
     </div>
-
-
-
-    <!-- {% assign ordered_collections = site.collections | sort: 'sequence' %}
-    {% for coll in ordered_collections %}
-        
-        {% comment %} Skip Posts {% endcomment %}
-        {% if coll.label == "posts" %} 
-            {% continue %} 
-        {% endif %}
-        
-        {% comment %} Link to the hompage of the topic {% endcomment %}
-        <div>
-            <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
-        </div>
-
-        {% for file in site[coll.label] %}
-            
-            {% if file.name contains "index" %}
-                {% continue %}
-            {% endif %}
-            
-            <div>
-                - <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
-            </div>
-        
-        {% endfor %}
-
-    {% endfor %} -->
 </section>
