@@ -29,7 +29,8 @@ permalink: /newtopics/
         {% for cat in all_categories %}
             <h2> {{ cat }} </h2>
             {% for file in site.tutorials %}
-                {% if file.categories contains cat.inspect %}
+                {{ file.categories }}
+                {% if file.categories contains cat %}
                     <a href="{{ site.baseurl | append:file.url }}">{{ file.title }}</a>
                 {% endif %}
             {% endfor %}
