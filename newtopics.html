@@ -7,7 +7,7 @@ permalink: /newtopics/
         {% assign all_categories = "" | split: ',' %}
         {% for file in site.tutorials %}
             {% for category in file.categories %}
-                {{ category }}
+                
                 {% capture all_categories %}
                     {% if all_categories %}
                         {{ all_categories | join: "," }},{{ category }}
@@ -21,7 +21,7 @@ permalink: /newtopics/
 
         {% assign all_categories = all_categories | split: "," | uniq %}
 
-        {% for cat in my_categories %}
+        {% for cat in all_categories %}
             {{ cat }}
         {% endfor %}
 
