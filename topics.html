@@ -34,10 +34,10 @@ permalink: /topics/
 
         {% for category in all_categories %}
         <h3>{{ category }}</h3>
-        <ul>
+        <ul style="list-style-type: none;">
             {% for file in site.articles %}
                 {% if file.categories contains category %}
-                <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
+                <li><a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
