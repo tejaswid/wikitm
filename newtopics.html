@@ -5,9 +5,9 @@ permalink: /newtopics/
 <section style="position:relative"></section>
     <div>
         <!-- loop through all the pages in the site -->
-        {% for file in site.pages %}
+        <!-- {% for file in site.pages %} -->
             <!-- if the page is from the tutorials folder, -->
-            {% if file.path contains 'tutorials/' %}
+            <!-- {% if file.path contains 'tutorials/' %}
                 <li>{{ file.title | capitalize }}</li>
                 <li>{{ file.categories }}</li>
                 {% for category in file.categories %}
@@ -16,9 +16,14 @@ permalink: /newtopics/
                 {% endfor %}
             {% endif %}
             
+        {% endfor %} -->
+
+
+        loop through all the pages in the tutorials folder
+        {% for file in site.tutorials %}
+            <li>{{ file.title | capitalize }}</li>
+            <li>{{ file.categories }}</li>
         {% endfor %}
-
-
 
         <!-- {% for category in site.labels %}
         <div class="archive-group">

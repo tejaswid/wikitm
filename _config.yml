@@ -57,25 +57,25 @@ collections:
   #   sequence: 1
   #   output: true
   #   permalink: /:collection/:name
-  ros:
-    menu_heading: "ROS"
-    sequence: 1
-    output: true
-    permalink: /:collection/:name
-  slurm:
-    menu_heading: "SLURM"
-    sequence: 3
-    output: true
-    permalink: /:collection/:name
-  rpi:
-    menu_heading: "Raspberry Pi"
-    sequence: 2
-    output: true
-    permalink: /:collection/:name
-  misc:
-    menu_heading: "Miscellaneous"
-    sequence: 4
-    output: true
-    permalink: /:collection/:name
+  # ros:
+  #   menu_heading: "ROS"
+  #   sequence: 1
+  #   output: true
+  #   permalink: /:collection/:name
+  # slurm:
+  #   menu_heading: "SLURM"
+  #   sequence: 3
+  #   output: true
+  #   permalink: /:collection/:name
+  # rpi:
+  #   menu_heading: "Raspberry Pi"
+  #   sequence: 2
+  #   output: true
+  #   permalink: /:collection/:name
+  # misc:
+  #   menu_heading: "Miscellaneous"
+  #   sequence: 4
+  #   output: true
+  #   permalink: /:collection/:name
 
-collections_dir: topics
+# collections_dir: topics
