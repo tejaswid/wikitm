@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Broadcasting internet
+title: Broadcasting internet from your Windows computer
 thumbnail:  '/assets/thumbnails/cat_200x200.png'
 blurb: A simple way to broadcast internet from an Windows PC.
 date_published: 26th August, 2023
