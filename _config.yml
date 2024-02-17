@@ -48,8 +48,8 @@ github:
   repo: https://github.com/tejaswid/wikitm
 
 collections:
-  tutorials:
-    menu_heading: "Tutorials"
+  articles:
+    menu_heading: "Articles"
     output: true
     # permalink: /:collection/:name
   # linuxwalkthroughs:

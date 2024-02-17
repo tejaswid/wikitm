@@ -7,8 +7,8 @@ permalink: /newtopics/
         <!-- Create an empty array to store all the categories -->
         {% assign all_categories = "" | split: ',' %}
 
-        <!-- Loop through all the files in the tutorials folder -->
-        {% for file in site.tutorials %}
+        <!-- Loop through all the files in the articles folder -->
+        {% for file in site.articles %}
             <!-- Loop through all the categories in the file -->
             {% for category in file.categories %}
                 <!-- Capture the category name as a string and add it to the array of all categories -->
@@ -26,7 +26,7 @@ permalink: /newtopics/
         {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
         <!-- {% assign all_categories = "" | split: "" %}
-        {% for tutorial in site.tutorials %}
+        {% for tutorial in site.articles %}
         {% assign tutorial_categories = tutorial.categories %}
         {% assign all_categories = all_categories | concat: tutorial_categories | uniq %}
         {% endfor %} -->
@@ -34,7 +34,7 @@ permalink: /newtopics/
         {% for category in all_categories %}
         <h3>{{ category }}</h3>
         <ul>
-            {% for tutorial in site.tutorials %}
+            {% for tutorial in site.articles %}
                 {% if tutorial.categories contains category %}
                 <a href="{{ site.baseurl|append:tutorial.url }}">{{ tutorial.title | capitalize }}</a>
                 {% endif %}
