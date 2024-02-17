@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Topics Home
-permalink: /topics/
+permalink: /topics_old/
 ---
 
 ## Contents
