@@ -22,16 +22,14 @@ permalink: /newtopics/
             {% endfor %}
         {% endfor %}
 
-        <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
-        {% assign all_categories = all_categories | split: "," | uniq | shift %}
+        <!-- Split the array of all categories into a list of unique categories,
+            remove the first element (empty string) and
+            sort in alphabetical order -->
+        {% assign all_categories = all_categories | split: "," | uniq | shift | sort %}
 
 
 
-        <!-- {% assign all_categories = "" | split: "" %}
-        {% for tutorial in site.tutorials %}
-        {% assign tutorial_categories = tutorial.categories %}
-        {% assign all_categories = all_categories | concat: tutorial_categories | uniq %}
-        {% endfor %} -->
+        <!-- why do I need a comment here? -->
 
         {% for category in all_categories %}
         <h2>{{ category }}</h2>
