@@ -3,7 +3,7 @@ layout: default
 title: Articles
 permalink: /articles/
 ---
-<!-- <section style="position:relative"></section>
+<section style="position:relative"></section>
     {% assign ordered_collections = site.collections | sort: 'sequence' %}
     {% for coll in ordered_collections %}
         
@@ -14,7 +14,7 @@ permalink: /articles/
 
         {% comment %} Link to the hompage of the topic {% endcomment %}
         <div>
-            <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a>
+            <!-- <a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'><h1>{{ coll.menu_heading }}</h1></a> -->
         </div>
         <div class="card-container">
             {% for file in site[coll.label] %}
@@ -42,13 +42,13 @@ permalink: /articles/
                                 </div>
                             {% endif %}
                             <div class="card-tagbox">
-                                {% if file.labels %}
-                                    {% assign file_labels = file.labels | split: ", " %}
-                                    {% for file_label in file_labels %}
-                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_label | append:"/" }}'>{{ file_label }}</a></span>
+                                {% if file.categories %}
+                                    {% assign file_categories = file.categories | split: ", " %}
+                                    {% for file_category in file_categories %}
+                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_category | append:"/" }}'>{{ file_category }}</a></span>
                                     {% endfor %}
                                 {% else %}
-                                    <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:coll.label | append:"/" }}'>{{ coll.menu_heading }}</a></span>
+                                    <span class="card-tag">Uncategorized</span>
                                 {% endif %}
                             </div>
                         </div>
@@ -57,4 +57,4 @@ permalink: /articles/
             {% endfor %}
         </div>
     {% endfor %}
-</section> -->
+</section>
