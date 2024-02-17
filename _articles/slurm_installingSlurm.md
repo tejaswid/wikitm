@@ -1,6 +1,9 @@
 ---
 layout: page
 title: "Building A Single Node GPU Cluster using SLURM"
+thumbnail:  '/assets/thumbnails/cat_200x200.png'
+blurb: 
+date_published: 26th August, 2023
 categories: [SLURM]
 ---
 
