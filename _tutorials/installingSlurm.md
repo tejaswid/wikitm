@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Building A Single Node GPU Cluster using SLURM"
-categories: [SLURM, Miscellaneous]
+categories: [SLURM, Miscellaneous, Rabbit]
 ---
 
 ### Contents
