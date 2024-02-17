@@ -30,6 +30,7 @@ permalink: /newtopics/
             <h2> {{ cat }} </h2>
             {% for file in site.tutorials %}
                 {% for category in file.categories %}
+                    <p>{{ category }}, {{ cat }}</p>
                     {% if category == cat %}
                         <a href="{{ site.baseurl | append:file.url }}">{{ file.title }}</a>
                     {% endif %}
