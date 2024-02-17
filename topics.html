@@ -34,13 +34,18 @@ permalink: /topics/
 
         {% for category in all_categories %}
         <h3>{{ category }}</h3>
-        <ul style="list-style-type: none;">
+        
+        <table style="margin-right: auto;">
             {% for file in site.articles %}
                 {% if file.categories contains category %}
-                <li><a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a></li>
+                <tr>
+                    <td><a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a></td>
+                    <td>{{ file.date_published }}</td>
+                </tr>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </table>
+
         {% endfor %}
 
 
