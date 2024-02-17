@@ -6,44 +6,79 @@ permalink: /articles/
 <section style="position:relative"></section>
 
     <div>
+        <!-- Create an empty array to store all the categories -->
+        {% assign all_categories = "" | split: ',' %}
+
         <!-- Loop through all the files in the articles folder -->
         {% for file in site.articles %}
-            <div class="card-container">
-                <div class="card card-white">
-                    <div class="card-innerbox">
-                        {% if file.thumbnail %}
-                            <img class="card-img" src= {{ site.baseurl | append:file.thumbnail }}>
-                        {% else %}
-                            <img class="card-img" src= {{ site.baseurl | append:'/assets/200x200.png' }}>
-                        {% endif %}
-                        <div class="card-textbox">
-                            <div class="card-title">
-                                <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
-                            </div>
-                            {% if file.date_published %}
-                                <div class="card-date">{{ file.date_published }}</div>
-                            {% endif %}
-                            <div class="card-bar"></div>
-                            {% if file.blurb %}
-                                <div class="card-description">
-                                    {{ file.blurb }}
-                                </div>
-                            {% endif %}
-                            <div class="card-tagbox">
-                                {% if file.categories %}
-                                    {% assign file_categories = file.categories | split: ", " %}
-                                    {% for file_category in file_categories %}
-                                        <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_category | append:"/" }}'>{{ file_category }}</a></span>
-                                    {% endfor %}
+            <!-- Loop through all the categories in the file -->
+            {% for category in file.categories %}
+                <!-- Capture the category name as a string and add it to the array of all categories -->
+                {% capture all_categories %}
+                    {% if all_categories %}
+                        {{ all_categories | join: "," }},{{ category }}
+                    {% else %}
+                        {{ category }}
+                    {% endif %}
+                {% endcapture %}
+            {% endfor %}
+        {% endfor %}
+
+        <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
+        {% assign all_categories = all_categories | split: "," | uniq | shift %}
+
+        <!-- {% assign all_categories = "" | split: "" %}
+        {% for tutorial in site.articles %}
+        {% assign tutorial_categories = tutorial.categories %}
+        {% assign all_categories = all_categories | concat: tutorial_categories | uniq %}
+        {% endfor %} -->
+
+        {% for category in all_categories %}
+        <h3>{{ category }}</h3>
+        <ul>
+            {% for file in site.articles %}
+                {% if file.categories contains category %}
+                    <div class="card-container">
+                        <div class="card card-white">
+                            <div class="card-innerbox">
+                                {% if file.thumbnail %}
+                                    <img class="card-img" src= {{ site.baseurl | append:file.thumbnail }}>
                                 {% else %}
-                                    <span class="card-tag">Uncategorized</span>
+                                    <img class="card-img" src= {{ site.baseurl | append:'/assets/200x200.png' }}>
                                 {% endif %}
+                                <div class="card-textbox">
+                                    <div class="card-title">
+                                        <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
+                                    </div>
+                                    {% if file.date_published %}
+                                        <div class="card-date">{{ file.date_published }}</div>
+                                    {% endif %}
+                                    <div class="card-bar"></div>
+                                    {% if file.blurb %}
+                                        <div class="card-description">
+                                            {{ file.blurb }}
+                                        </div>
+                                    {% endif %}
+                                    <!-- <div class="card-tagbox">
+                                        {% if file.categories %}
+                                            {% assign file_categories = file.categories | split: ", " %}
+                                            {% for file_category in file_categories %}
+                                                <span class="card-tag"><a href='{{ site.baseurl | append:"/" | append:file_category | append:"/" }}'>{{ file_category }}</a></span>
+                                            {% endfor %}
+                                        {% else %}
+                                            <span class="card-tag">Uncategorized</span>
+                                        {% endif %}
+                                    </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
+        </ul>
         {% endfor %}
+
+
     </div>
 
 </section>
