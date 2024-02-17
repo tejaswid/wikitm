@@ -25,12 +25,7 @@ permalink: /newtopics/
         <!-- Split the array of all categories into a list of unique categories and remove the first element (empty string) -->
         {% assign all_categories = all_categories | split: "," | uniq | shift %}
 
-
-
-        <!-- loop over each category
-            then loop over each file in the tutorials folder
-            then loop over each of its cateogries and check for match -->
-
+        {% comment %} Loop through all the unique categories {% endcomment %}
         {% for category in all_categories %}
         <h2>{{ category }}</h2>
         <ul>
