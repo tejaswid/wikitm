@@ -20,7 +20,7 @@ permalink: /newtopics/
         {% endfor %}
 
         {% assign all_categories = all_categories | split: "," | uniq %}
-        {% assign all_categories = all_categories | split: "," | shift %}
+        {{ all_categories }}
 
         {% for cat in all_categories %}
             <li> {{ cat }} </li>
