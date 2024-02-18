@@ -1,0 +1,24 @@
+// Footer style
+
+/* Footer
+ */
+ .footer {
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    padding-left:  1rem;
+    padding-right: 1rem;
+    padding-top:    0rem;
+    padding-bottom: 1rem;
+    margin-top: auto;
+    // background-color: #808080; 
+  
+    // If the screen size is medium or large,
+    // expand the width of the content to max screen width.
+    @media (min-width: $width-medium-screen) {
+      //margin-left: calc(#{$width-sidebar} + 2rem);
+      margin-left: 2rem;
+      margin-right: 2rem;
+      margin-top: 6.25rem;
+    }
+  } 
