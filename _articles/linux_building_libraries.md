@@ -1,7 +1,7 @@
 ---
 title: Building Libraries Without Root Access
 layout: page
-thumbnail:
+thumbnail: '/assets/thumbnails/buildingBlocks_200x200.png'
 blurb: 
 date_published: 
 categories: [Linux]

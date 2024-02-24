@@ -8,3 +8,4 @@ _pdf
 *.sublime-project
 *.sublime-workspace
 Gemfile.lock
+assets/thumbnails/thumbnails.svg
