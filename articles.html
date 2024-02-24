@@ -38,7 +38,7 @@ permalink: /articles/
         <ul>
             {% for file in site.articles %}
                 {% if file.categories contains category %}
-                    <div class="card-container">
+                    <a class="card-container" style="display:block" href="{{ site.baseurl|append:file.url }}">
                         <div class="card card-white">
                             <div class="card-innerbox">
                                 {% if file.thumbnail %}
@@ -48,7 +48,7 @@ permalink: /articles/
                                 {% endif %}
                                 <div class="card-textbox">
                                     <div class="card-title">
-                                        <a href="{{ site.baseurl|append:file.url }}">{{ file.title | capitalize }}</a>
+                                        {{ file.title | capitalize }}
                                     </div>
                                     {% if file.date_published %}
                                         <div class="card-date">{{ file.date_published }}</div>
@@ -72,7 +72,7 @@ permalink: /articles/
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 {% endif %}
             {% endfor %}
         </ul>
