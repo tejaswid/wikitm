@@ -1,7 +1,7 @@
 ---
 title: Installation Basics in Linux
 layout: page
-thumbnail:
+thumbnail: '/assets/thumbnails/install_in_linux_200x200.png'
 blurb: 
 date_published: 
 categories: [Linux]
