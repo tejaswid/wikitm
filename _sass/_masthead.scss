@@ -11,6 +11,7 @@
   overflow: hidden;
   background-color: white;
   height: 4rem;
+  z-index: 1; // make the nav bar appear on top of everything else
   // adjust height for very small screens since the tagline will take another line
   @media (max-width: $width-very-small-screen)
   {
